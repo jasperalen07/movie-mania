@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-
+import './scss/styles.scss'
 function App() {
   return (
     <div className="App">
