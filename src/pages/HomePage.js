@@ -1,3 +1,4 @@
+import MoviesContainer from "../components/MoviesContainer.js";
 import getPopularMovies from "../utilities/api.js";
 import {useEffect, useState} from "react";
 
@@ -10,12 +11,12 @@ function HomePage() {
          setPopularMovies(getMovies.results)
         console.log(getMovies);//shows objects of movies
     })
-    },[popularMovies])
+    },[])
 
     return(
-        <div>
-<h1>Hello This will be a Movie Database</h1>
-        </div>
+       <main>
+        <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
+       </main>
     )
 
 }
