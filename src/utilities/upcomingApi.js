@@ -1,10 +1,12 @@
- const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
+const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
 const API_ENDPOINT = "https://api.themoviedb.org/3";
 
-console.log(API_TOKEN);
 
-export default function getPopularMovies() {
-    return fetch(`${API_ENDPOINT}/movie/popular`, {
+
+
+
+export default function getUpcomingMovies() {
+    return fetch(`${API_ENDPOINT}/movie/upcoming`, {
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${API_TOKEN}`
@@ -23,10 +25,4 @@ export default function getPopularMovies() {
 
 }
 
-
-
-
-
-export { getPopularMovies};
-
-
+export { getUpcomingMovies};

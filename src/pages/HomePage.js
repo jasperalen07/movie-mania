@@ -1,6 +1,11 @@
 import MoviesContainer from "../components/MoviesContainer.js";
 import getPopularMovies from "../utilities/api.js";
+import getUpcomingMovies from "../utilities/upcomingApi.js";
 import {useEffect, useState} from "react";
+import Header from "../components/Header.js";
+
+
+
 
 function HomePage() {
     const [popularMovies, setPopularMovies] = useState([]);
@@ -13,10 +18,27 @@ function HomePage() {
     })
     },[])
 
+    const [upcomingMovies, setUpcomingMovies] = useState([]);
+    console.log(upcomingMovies);
+    useEffect(() => {
+       getUpcomingMovies()
+    .then( getUpcomingMovies => {
+         setUpcomingMovies(getUpcomingMovies.results)
+        console.log(getUpcomingMovies);//shows objects of movies
+    })
+    },[])
+
     return(
-       <main>
-        <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
-       </main>
+
+      <Header />
+
+
+      //  <main>
+         
+      //   <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
+      //   <h1>upcoming movies</h1>
+      //   <MoviesContainer title="upcoming Movies" moviesData={upcomingMovies}/>
+      //  </main>
     )
 
 }
