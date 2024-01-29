@@ -1,5 +1,5 @@
 import MoviesContainer from "../components/MoviesContainer.js";
-import getPopularMovies from "../utilities/api.js";
+import {getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie} from "../utilities/api.js";
 import {useEffect, useState} from "react";
 
 function HomePage() {
@@ -13,12 +13,57 @@ function HomePage() {
     })
     },[])
 
-    return(
-       <main>
-        <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
-       </main>
-    )
+    
+    const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
+    console.log(nowPlayingMovies);
+    useEffect(() => {
+       getNowPlayingMovie()
+       .then( getPlayingMovies => {
+          setNowPlayingMovies(getPlayingMovies.results)
+          console.log(getPlayingMovies);
+         })
+         
+      },[])
 
+      const [topRatedMovies, setTopRatedMovies] = useState([]);
+      console.log(topRatedMovies);
+      useEffect(() => {
+         getTopRatedMovie()
+         .then( getTopRatedMovies => {
+            setTopRatedMovies(getTopRatedMovies.results)
+            console.log(getTopRatedMovies);
+
+         })
+
+      },[])
+
+    
+
+      const [upcomingMovies, setUpcomingMovies] = useState([]);
+      console.log(upcomingMovies);
+      useEffect(() => {
+         getUpcomingMovie()
+         .then( getUpcomingMovies => {
+            setUpcomingMovies(getUpcomingMovies.results)
+            console.log(getUpcomingMovies);
+
+         })
+
+      },[])
+
+
+      
+      return(
+         <main>
+          <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
+          <MoviesContainer title="Now Playing Movies" moviesData={nowPlayingMovies}/>
+          <MoviesContainer title="Top Rated Movies" moviesData={topRatedMovies}/>
+          <MoviesContainer title="Upcoming" moviesData={upcomingMovies}/>
+          
+         </main>
+      )
 }
+
+
 
 export default HomePage;
