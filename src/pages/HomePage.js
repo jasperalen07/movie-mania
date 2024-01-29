@@ -1,3 +1,4 @@
+import Categories from "../components/Categories.js";
 import MoviesContainer from "../components/MoviesContainer.js";
 import {getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie} from "../utilities/api.js";
 import {useEffect, useState} from "react";
@@ -52,13 +53,34 @@ function HomePage() {
       },[])
 
 
-      
+
+
+      const [catergoryName, setCategoryName] = useState('Popular');
+
       return(
          <main>
-          <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
-          <MoviesContainer title="Now Playing Movies" moviesData={nowPlayingMovies}/>
-          <MoviesContainer title="Top Rated Movies" moviesData={topRatedMovies}/>
-          <MoviesContainer title="Upcoming" moviesData={upcomingMovies}/>
+         <Categories catergoryName={catergoryName} setCategoryName={setCategoryName} />
+         {catergoryName === 'Popular' && (
+            <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
+         
+         )}
+
+         {catergoryName === 'Top Rated' && (
+            <MoviesContainer title="Top Rated Movies" moviesData={topRatedMovies}/>
+
+         )}
+
+         {catergoryName === 'Now Playing' && (
+            <MoviesContainer title="Now Playing Movies" moviesData={nowPlayingMovies}/>
+
+         )}
+
+            {catergoryName === 'Upcoming' && (
+               <MoviesContainer title="Upcoming" moviesData={upcomingMovies}/>
+
+            )}
+
+
           
          </main>
       )

@@ -4,7 +4,6 @@ function MovieCard({movie}){
         
             <div key={movie.id} className="movie-card">
                 <p>Title: {movie.original_title}</p>
-                <p>Backdrop: {movie.backdrop_path}</p>
                 <p>Release Date: {movie.release_date}</p>
                 
                 <img
