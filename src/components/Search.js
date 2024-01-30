@@ -4,4 +4,6 @@ function SearchBar() {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
+  
+
 }
