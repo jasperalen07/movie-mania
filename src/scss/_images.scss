@@ -1,3 +1,10 @@
 .favicon {
     width: 50px;
 }
+
+.darkImage{
+    filter: brightness(0.4);
+}
+.brightImage{
+    filter: brightness(1);
+}

@@ -30,15 +30,15 @@ function HomePage() {
 
     return(
 
-      <Header />
-
-
-      //  <main>
+       
+       
+       <main>
+          <Header />
          
-      //   <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
-      //   <h1>upcoming movies</h1>
-      //   <MoviesContainer title="upcoming Movies" moviesData={upcomingMovies}/>
-      //  </main>
+        <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
+        <h1>upcoming movies</h1>
+        <MoviesContainer title="upcoming Movies" moviesData={upcomingMovies}/>
+       </main>
     )
 
 }
