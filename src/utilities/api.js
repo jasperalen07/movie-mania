@@ -81,6 +81,27 @@ function getUpcomingMovie(){
     });
 }
 
-export { getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie};
+function searchMovie(searchQuery){
+    return fetch(`${API_ENDPOINT}/movie/search${searchQuery}`,{
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${API_TOKEN}`
+        }
+    })
+    .then((response) => {
+        if(!response.ok){
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .catch((error) => {
+        console.log("Error fetching searched movies", error)
+    });
+
+    
+   
+}
+
+export { getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie, searchMovie};
 
 
