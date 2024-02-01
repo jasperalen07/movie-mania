@@ -2,6 +2,7 @@ import Categories from "../components/Categories.js";
 import MoviesContainer from "../components/MoviesContainer.js";
 import {getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie} from "../utilities/api.js";
 import {useEffect, useState} from "react";
+import Header from "../components/Header.js";
 
 function HomePage() {
     const [popularMovies, setPopularMovies] = useState([]);
@@ -62,6 +63,7 @@ const [tempState, setTempState] = useState()
 
       return(
          <main>
+            <Header/>
             <p></p>
          <Categories catergoryName={catergoryName} setCategoryName={setCategoryName} />
          {catergoryName === 'Popular' && (
