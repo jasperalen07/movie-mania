@@ -7,6 +7,7 @@ function Search() {
   
 
 
+
 <form action='/search'
  method='get' 
  className='search_form'
@@ -21,5 +22,3 @@ function Search() {
  
 </form>
   
-
-}
