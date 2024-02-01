@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 
 function HomePage() {
     const [popularMovies, setPopularMovies] = useState([]);
-const [tempState, setTempState] = useState()
+// const [tempState, setTempState] = useState()
 
     console.log(popularMovies);
     useEffect(() => {
