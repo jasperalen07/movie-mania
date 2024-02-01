@@ -19,10 +19,11 @@ function truncate (input) {
 
     function filterVideos (videoDataArray){
         return videoDataArray.filter((videoData) => {
-            return videoData.site === "youtube" && videoData.type === "Trailer";
-        })
+            return videoData.site === "YouTube" && videoData.type === "Trailer";
+        })      
     }
 
   
 
 export { formatReleaseDate, truncate, getYear, filterVideos };
+ 

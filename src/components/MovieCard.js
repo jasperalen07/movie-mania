@@ -1,8 +1,14 @@
-
+import { useNavigate } from "react-router-dom";
 function MovieCard({movie}){
+    const navigate = useNavigate();
     return(
+
         
-            <div key={movie.id} className="movie-card">
+
+        
+            <div key={movie.id} className="movie-card" onClick={() => {
+                navigate(`/movie/${movie.id}`);
+              }} >
                 <p> {movie.original_title}</p>
                 <p> {movie.release_date}</p>
                 
@@ -14,7 +20,7 @@ function MovieCard({movie}){
 
             </div>
         
-    )
+    );
 }
 
 export default MovieCard
