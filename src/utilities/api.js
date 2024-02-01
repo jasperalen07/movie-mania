@@ -81,6 +81,24 @@ function getUpcomingMovie(){
     });
 }
 
+function getMovieById(movieId){
+    return fetch(`${API_ENDPOINT}/movie/${movieId}?append_to_response=videos`,{
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${API_TOKEN}`
+        }
+    })
+    .then((response) => {
+        if(!response.ok){
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .catch((error) => {
+        console.log("Error fetching movie id's", error)
+    });
+}
+
 function searchMovie(searchQuery){
     return fetch(`${API_ENDPOINT}/movie/search${searchQuery}`,{
         headers: {
@@ -102,6 +120,6 @@ function searchMovie(searchQuery){
    
 }
 
-export { getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie, searchMovie};
+export { getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie, searchMovie, getMovieById};
 
 
