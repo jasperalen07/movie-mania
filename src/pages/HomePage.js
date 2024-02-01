@@ -5,6 +5,8 @@ import {useEffect, useState} from "react";
 
 function HomePage() {
     const [popularMovies, setPopularMovies] = useState([]);
+const [tempState, setTempState] = useState()
+
     console.log(popularMovies);
     useEffect(() => {
        getPopularMovies()
@@ -21,7 +23,8 @@ function HomePage() {
        getNowPlayingMovie()
        .then( getPlayingMovies => {
           setNowPlayingMovies(getPlayingMovies.results)
-          console.log(getPlayingMovies);
+          console.log("popular movies", getPlayingMovies);
+          
          })
          
       },[])
@@ -59,6 +62,7 @@ function HomePage() {
 
       return(
          <main>
+            <p></p>
          <Categories catergoryName={catergoryName} setCategoryName={setCategoryName} />
          {catergoryName === 'Popular' && (
             <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>

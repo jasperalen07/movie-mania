@@ -17,8 +17,14 @@ function truncate (input) {
         return dateObject.toLocaleDateString("en-US", options);
     }
 
-    
+
+    function filterVideos (videoDataArray){
+        return videoDataArray.filter((videoData) => {
+            return videoData.site === "YouTube" && videoData.type === "Trailer";
+        })      
+    }
 
   
 
-export { formatReleaseDate, truncate, getYear};
+export { formatReleaseDate, truncate, getYear, filterVideos };
+ 
