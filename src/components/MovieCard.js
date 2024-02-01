@@ -12,7 +12,7 @@ function MovieCard({movie}){
               }} >
                 <p> {movie.original_title}</p>
                 <p>{formatReleaseDate(movie.release_date)}</p>
-                <p>{movie.vote_average}</p>
+                <p>Rating: {movie.vote_average}</p>
                 
                 <img
                             src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
