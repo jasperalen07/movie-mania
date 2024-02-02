@@ -12,6 +12,7 @@ const [searchMovieResults, setSearchMovieResults] = useState([]);
 const location = useLocation()
 const searchQuery = new URLSearchParams(location.search).get('query')
 
+
 useEffect(() => {
     if(searchQuery) {
         searchMovie(searchQuery).then((data =>{
