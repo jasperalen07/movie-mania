@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import PageSingleMovie from "./pages/PageSingleMovie";
-import AboutPage from "./pages/AboutPage";
-import FavouritePage from "./pages/FavouritePage";
+
 import './scss/styles.scss'
 function App() {
   return (
@@ -13,6 +12,8 @@ function App() {
         <Route path="/pages/AboutPage" element= {<AboutPage/>}></Route>
         <Route path="/pages/FavouritePage" element= {<FavouritePage/>}></Route>
         <Route path="/movie/:id" element={<PageSingleMovie />} />
+        <Route path="/searchResults" element={<SearchResults />} />
+
       </Routes>
       </BrowserRouter>
     </div>

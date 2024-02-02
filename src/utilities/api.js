@@ -99,8 +99,10 @@ function getMovieById(movieId){
     });
 }
 
+//fetch('https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1', options)
+
 function searchMovie(searchQuery){
-    return fetch(`${API_ENDPOINT}/movie/search${searchQuery}`,{
+    return fetch(`${API_ENDPOINT}/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1`,{
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${API_TOKEN}`
