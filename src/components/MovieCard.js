@@ -2,6 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { formatReleaseDate } from "../utilities/toolbelt";
 
 import ImageComponent from "./ImageFunction";
+import FavoriteList from "./FavoriteFunction";
 function MovieCard({movie}){
     const navigate = useNavigate();
     return(
@@ -18,6 +19,7 @@ function MovieCard({movie}){
                 <p>Rating: {movie.vote_average}</p>
                 
                 <ImageComponent movie = {movie}></ImageComponent>
+                <FavoriteList movie = {movie}></FavoriteList>
                 {/* Moved into ImageFunctions to make code cleaner.
                 
                 <img
