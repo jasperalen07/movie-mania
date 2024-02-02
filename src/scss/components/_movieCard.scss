@@ -1,2 +1,47 @@
 body{background-color: grey}
 
+.movie-container{
+    position: relative;
+    max-width:max-content;
+}
+.movie-container img{
+    width: fit-content;
+}
+
+.details{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80%;
+    max-height: 50%;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top:10%;
+    
+}
+.rating{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    transform: translateY(-100%);
+
+}
+.button{
+    color: black;
+    background-color: white;
+    position: absolute;
+
+    left: 50%;
+    bottom: 10px;
+    width: 5rem;
+    height: 2rem;
+    transform: translateX(-50%);
+    
+
+}
