@@ -1,5 +1,6 @@
 import MoviesContainer from "../components/MoviesContainer.js";
 import getPopularMovies from "../utilities/api.js";
+import FeaturedCarousel from "../components/FeaturedCarousel.js";
 import {useEffect, useState} from "react";
 
 function HomePage() {
@@ -15,6 +16,7 @@ function HomePage() {
 
     return(
        <main>
+         <FeaturedCarousel />
         <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
        </main>
     )
