@@ -65,7 +65,7 @@ function HomePage() {
 
       return(
          <main>
-
+<Search/>
          <Categories catergoryName={catergoryName} setCategoryName={setCategoryName} />
          {catergoryName === 'Popular' && (
             <MoviesContainer title="Popular Movies" moviesData={popularMovies}/>
