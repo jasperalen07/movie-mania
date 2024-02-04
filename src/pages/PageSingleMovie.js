@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
-import { getMovieById } from "../utilities/api";  
+import { getMovieById } from "../utilities/api"; 
+
 
 
 function PageSingleMovie() {
@@ -9,6 +10,7 @@ function PageSingleMovie() {
   const id = params.id;
   const [movieData, setmovieData] = useState();
   const [movieVideos, setMovieVideos] = useState([]);
+  
 
   useEffect(() => {
     getMovieById(id)
@@ -17,6 +19,7 @@ function PageSingleMovie() {
         const youtubeTrailerVideos = filterVideos(result.videos.results);
         setmovieData(result);
         setMovieVideos(youtubeTrailerVideos);
+        console.log('cast', result.credits.cast);
       })
       .catch((error) => {
         alert(error);
@@ -24,6 +27,12 @@ function PageSingleMovie() {
   }, []);
     console.log("movieData", movieData);
     console.log("movieVideos", movieVideos);
+
+    
+
+   
+
+
 
     return (
       <main>
@@ -37,18 +46,39 @@ function PageSingleMovie() {
                 <p>{movieData.overview}</p>
 
                 <div className="movie-videos">
-                <iframe
-                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
-                width="600"
-                height="600"
-                title={movieData.name}
-                ></iframe>
-                </div>
-            </div>
+                 {movieVideos.length > 0 ? (
 
+                <iframe
+
+                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+                width="450"
+                height="450"
+                title={movieData.name}
+                >
+                </iframe>
+                ):(
+                  <p>There is no trailer available.</p>
+
+                )}
+                </div>
+  
+            </div>
+            <div className="cast-lists">
+                  {movieData.credits.cast.slice(0, 5).map((actor)=> (
+                    <div>
+                      {actor.profile_path === null ? (
+        <img src='placeholder.jpg' alt='Placeholder' />
+      ):(
+        <img src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`}></img>
+      )
+}
+                    </div>
+                  ) )}
+            </div>
             </>
 
             )}
+            
         </div>
         </main>
     );
