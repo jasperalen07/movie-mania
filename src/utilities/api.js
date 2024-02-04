@@ -82,7 +82,7 @@ function getUpcomingMovie(){
 }
 
 function getMovieById(movieId){
-    return fetch(`${API_ENDPOINT}/movie/${movieId}?append_to_response=videos`,{
+    return fetch(`${API_ENDPOINT}/movie/${movieId}?append_to_response=videos%2Ccredits`,{
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${API_TOKEN}`
@@ -95,7 +95,7 @@ function getMovieById(movieId){
         return response.json();
     })
     .catch((error) => {
-        console.log("Error fetching movie id's", error)
+        console.log("Error fetching movie details", error)
     });
 }
 
@@ -117,10 +117,15 @@ function searchMovie(searchQuery){
     .catch((error) => {
         console.log("Error fetching searched movies", error)
     });
-
-    
-   
 }
+
+
+  
+
+
+
+
+
 
 export { getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie, searchMovie, getMovieById};
 
