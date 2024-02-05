@@ -34,56 +34,49 @@ function PageSingleMovie() {
 
 
 
-    return (
-      <main>
-      <div className="movie-page">
-            {movieData && (
-              <>
-            <h1>{movieData.title}</h1>
-            <div>
-                <h2>{formatReleaseDate(movieData.release_date)}</h2>
-                
-                <p>{movieData.overview}</p>
-
-                <div className="movie-videos">
-                 {movieVideos.length > 0 ? (
-
+    <main>
+    <div className="movie-page">
+      {movieData && (
+        <>
+          <img
+            src={`https://image.tmdb.org/t/p/w200${movieData.backdrop_path}`}
+            alt={`Backdrop for ${movieData.original_title}`}
+            style={{ maxWidth: "100%" }}
+          />
+          <h1>{movieData.title}</h1>
+          <div>
+            <h2>{formatReleaseDate(movieData.release_date)}</h2>
+            <p>{movieData.overview}</p>
+            <div className="movie-videos">
+              {movieVideos.length > 0 ? (
                 <iframe
-
-                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
-                width="450"
-                height="450"
-                title={movieData.name}
+                  src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+                  width="450"
+                  height="450"
+                  title={movieData.title}
                 >
                 </iframe>
-                ):(
-                  <p>There is no trailer available.</p>
-
+              ) : (
+                <p>There is no trailer available.</p>
+              )}
+            </div>
+          </div>
+          <div className="cast-lists">
+            {movieData.credits.cast.slice(0, 5).map((actor) => (
+              <div key={actor.id}>
+                {actor.profile_path === null ? (
+                  <img src='placeholder.jpg' alt='Placeholder' />
+                ) : (
+                  <img src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
                 )}
-                </div>
-  
-            </div>
-            <div className="cast-lists">
-                  {movieData.credits.cast.slice(0, 5).map((actor)=> (
-                    <div>
-                      {actor.profile_path === null ? (
-        <img src='placeholder.jpg' alt='Placeholder' />
-      ):(
-        <img src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`}></img>
-
-      )
-}
-      <p>{actor.name} as {actor.character}</p>
-                    </div>
-                  ) )}
-            </div>
-            </>
-
-            )}
-            
-        </div>
-        </main>
-    );
+                <p>{actor.name} as {actor.character}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  </main>
 }
 
 export default PageSingleMovie;
