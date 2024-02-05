@@ -1,0 +1,33 @@
+/* FeaturedCarousel.scss */
+.featured-movie {
+    position: relative;
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity as needed */
+      color: white;
+  
+      h3 {
+        margin-bottom: 10px;
+      }
+  
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
