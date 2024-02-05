@@ -4,6 +4,7 @@ import Search from "../components/Search.js";
 import {getPopularMovies, getNowPlayingMovie, getTopRatedMovie, getUpcomingMovie} from "../utilities/api.js";
 import {useEffect, useState} from "react";
 import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
 
 function HomePage() {
@@ -94,8 +95,12 @@ function HomePage() {
 
 
           
+<Footer />
          </main>
+      
       )
+
+
 }
 
 
