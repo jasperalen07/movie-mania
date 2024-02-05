@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import { getMovieById } from "../utilities/api"; 
+import Header, { Headers } from "../components/Header";
+
+
 
 
 
@@ -36,6 +39,7 @@ function PageSingleMovie() {
 
     return (
       <main>
+        <Header></Header>
       <div className="movie-page">
             {movieData && (
               <>
