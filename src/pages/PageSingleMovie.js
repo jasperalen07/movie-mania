@@ -37,8 +37,14 @@ function PageSingleMovie() {
       <main>
         <Header></Header>
       <div className="movie-page">
+
+      <img
+            src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
+            alt={`Backdrop for ${movieData.original_title}`}></img>
+        
             {movieData && (
               <>
+              
             <h1>{movieData.title}</h1>
             <div>
                 <h2>{formatReleaseDate(movieData.release_date)}</h2>
