@@ -11,7 +11,7 @@ import Header from "../components/Header";
 function PageSingleMovie() {
   const params = useParams();
   const id = params.id;
-  const [movieData, setmovieData] = useState();
+  const [movieData, setmovieData] = useState('');
   const [movieVideos, setMovieVideos] = useState([]);
   
 
@@ -39,9 +39,11 @@ function PageSingleMovie() {
       <div className="movie-page">
 
       <img
-            src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
-            alt={`Backdrop for ${movieData.original_title}`}></img>
-        
+           
+           src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
+           alt={`Backdrop for ${movieData}`}
+           style={{ maxWidth: "100%" }}></img>
+
             {movieData && (
               <>
               
