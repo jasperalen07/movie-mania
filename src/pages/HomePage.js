@@ -65,6 +65,7 @@ function HomePage() {
 
       return(
          <main>
+            <Header/>
 <Search/>
          <Categories catergoryName={catergoryName} setCategoryName={setCategoryName} />
          {catergoryName === 'Popular' && (
