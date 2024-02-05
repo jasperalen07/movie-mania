@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import { getMovieById } from "../utilities/api"; 
-import Header, { Headers } from "../components/Header";
+import Header from "../components/Header";
 
 
 
@@ -33,11 +33,6 @@ function PageSingleMovie() {
 
     
 
-   
-
-
-
-<<<<<<< HEAD
     return (
       <main>
         <Header></Header>
@@ -53,23 +48,8 @@ function PageSingleMovie() {
                 <div className="movie-videos">
                  {movieVideos.length > 0 ? (
 
-=======
-    <main>
-    <div className="movie-page">
-      {movieData && (
-        <>
-          <img
-            src={`https://image.tmdb.org/t/p/w200${movieData.backdrop_path}`}
-            alt={`Backdrop for ${movieData.original_title}`}
-            style={{ maxWidth: "100%" }}
-          />
-          <h1>{movieData.title}</h1>
-          <div>
-            <h2>{formatReleaseDate(movieData.release_date)}</h2>
-            <p>{movieData.overview}</p>
-            <div className="movie-videos">
-              {movieVideos.length > 0 ? (
->>>>>>> alens-task
+
+
                 <iframe
                   src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
                   width="450"
@@ -98,6 +78,8 @@ function PageSingleMovie() {
       )}
     </div>
   </main>
+
+    );
 }
 
 export default PageSingleMovie;
