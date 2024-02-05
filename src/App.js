@@ -4,10 +4,7 @@ import PageSingleMovie from "./pages/PageSingleMovie";
 import AboutPage from "./pages/AboutPage";
 import FavouritePage from "./pages/FavouritePage";
 import SearchResults from "./pages/SearchResults";
-
-
-
-import './scss/styles.scss'
+import './scss/styles/styles.css';
 function App() {
   return (
     <div className="App">
