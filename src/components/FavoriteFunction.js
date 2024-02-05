@@ -12,6 +12,8 @@ const FavoriteList = ({ movie }) => {
     const newFavorite = {
       id: movie.id,
       title: movie.original_title,
+      moviePortrait: <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}/>,
+      
       
     };
 
@@ -32,8 +34,10 @@ const FavoriteList = ({ movie }) => {
      
       <ul>
         {favorites.map((favorite) => (
-          <li key={favorite.id}>{favorite.title}</li>
+          <li key={favorite.id}>{favorite.title}{favorite.moviePortrait}</li>
+          
         ))}
+        
       </ul>
     </div>
   );

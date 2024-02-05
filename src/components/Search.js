@@ -24,8 +24,8 @@ function Search() {
       value='search'
       onSubmit={handleSubmit}
     >
-      <label className='search'> Search </label>
-      <input type='text' id='search-input' name='search' />
+      <label className='search'></label>
+      <input type='text' id='search-input' name='search' placeholder = "Search"/>
       <button type="submit">Search</button>
     </form>
   );

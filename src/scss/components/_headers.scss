@@ -1,14 +1,29 @@
 .navbar{
-    ul{
+    
         padding:0;
         list-style-type:none;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         
+    
+
+
+}
+nav{
+    position: relative;
+}
+.navTags{
+    position: absolute;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.521);
+    color: white;
+    list-style-type: none;
+    
+    a:visited{
+        color:white;
     }
-
-
+    
 }
 .show{
     display: block;

@@ -1,4 +1,6 @@
 import Header from "../components/Header";
+import FavoriteList from "../components/FavoriteFunction";
+import MovieCard from "../components/MovieCard";
 
 
 function FavouritePage() {
@@ -7,8 +9,8 @@ function FavouritePage() {
         <main>
             <Header />
 
-            <h1>Favourites</h1>
-             
+
+
 
 
         </main>
