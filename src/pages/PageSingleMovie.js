@@ -78,7 +78,7 @@ function PageSingleMovie() {
                 ) : (
                   <img src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
                 )}
-                <p>{actor.name} as {actor.character}</p>
+                <p>{actor.name} {actor.character}</p>
               </div>
             ))}
           </div>
