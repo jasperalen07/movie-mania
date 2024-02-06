@@ -44,6 +44,13 @@ function PageSingleMovie() {
            alt={`Backdrop for ${movieData}`}
            style={{ maxWidth: "100%" }}></img>
 
+          <img
+           
+           src={`https://image.tmdb.org/t/p/w200${movieData.poster_path}`}
+           alt={`Backdrop for ${movieData.original_title}`}
+           style={{ maxWidth: "80%" }}></img>
+           
+
             {movieData && (
               <>
               
