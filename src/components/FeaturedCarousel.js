@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { getPopularMovies } from '../utilities/api.js';
+import { useNavigate, Link } from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../scss/components/FeaturedCarousel.scss'
@@ -49,14 +50,19 @@ const FeaturedCarousel = () => {
     nextArrow: <CustomNextArrow />,
   };
 
-
+  const navigate = useNavigate();
   console.log(featuredMovies);
 
   return (
     <Slider {...settings}>
       {featuredMovies.map(movie => (
         <div key={movie.id}>
+                      <div onClick={() => {
+                navigate(`/movie/${movie.id}`);
+              }} >
+                <Link>{movie.original_title}</Link>
           <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
+                </div>
           <h3>{movie.title}</h3>
           <p>{truncateOverview(movie.overview, 100)}</p>
           {/* Add additional movie information or styling as needed */}
