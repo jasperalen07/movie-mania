@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 
 
 
+
 function PageSingleMovie() {
   const params = useParams();
   const id = params.id;

@@ -1,5 +1,23 @@
 @use '../components/variables' as *;
 
+body {
+    color: white;
+}
+
+.backdrop-image {
+    width: 100%;
+    height: 80%;
+    margin-bottom: 1rem;
+    padding: auto;;
+}
+
+.poster-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
 .movie-details {
     display: flex;
     flex-direction: column;
@@ -11,11 +29,39 @@ h1 {
     margin-bottom: 0.5rem ;
 }
 
-.cast-item {
-    .cast-name{
-        color: $castNameColor;
-        background-color: red;
+.movie-videos {
+    iframe{
+        width: 100%;
+        height: 100%;
     }
+}
+
+.cast-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    align-items: center;
+    margin-right: 1rem;
+
+    .cast-name {
+        color: $castNameColor;
+    }
+
+    .actor-image {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 1.5rem;
+        object-fit: cover;
+        margin-right: 0.5rem;
+
+    }
+
+    .placeholder {
+        background-color: lightgray;
+    }
+
+    
+
 }
 
 
