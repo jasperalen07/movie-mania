@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import { getMovieById } from "../utilities/api"; 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 
 
 
@@ -38,27 +40,37 @@ function PageSingleMovie() {
         <Header></Header>
       <div className="movie-page">
 
+      <div className="backdrop-container">
       <img
-           
+           className="backdrop-image"
            src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
            alt={`Backdrop for ${movieData}`}
-           style={{ maxWidth: "100%" }}></img>
+           ></img>
 
+      </div>
+
+      <div className="movie-poster">
+        <div className="poster-container">
           <img
-           
+          className="poster-image"
            src={`https://image.tmdb.org/t/p/w200${movieData.poster_path}`}
            alt={`Backdrop for ${movieData.original_title}`}
-           style={{ maxWidth: "80%" }}></img>
+          ></img>
+
+        </div>
+
+      </div>
+           
            
 
             {movieData && (
               <>
               
-            <h1>{movieData.title}</h1>
-            <div>
-                <h2>{formatReleaseDate(movieData.release_date)}</h2>
+            <h1 className="movie-title">{movieData.title}</h1>
+            <div className="movie-release-date">
+                <h2 className="movie-date">{formatReleaseDate(movieData.release_date)}</h2>
                 
-                <p>{movieData.overview}</p>
+                <p className="movie-overview">{movieData.overview}</p>
 
                 <div className="movie-videos">
                  {movieVideos.length > 0 ? (
@@ -66,6 +78,7 @@ function PageSingleMovie() {
 
 
                 <iframe
+                className="movie-trailer"
                   src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
                   width="450"
                   height="450"
@@ -73,7 +86,7 @@ function PageSingleMovie() {
                 >
                 </iframe>
               ) : (
-                <p>There is no trailer available.</p>
+                <p className="movie-warning">There is no trailer available.</p>
               )}
             </div>
           </div>
@@ -81,18 +94,21 @@ function PageSingleMovie() {
             {movieData.credits.cast.slice(0, 5).map((actor) => (
               <div key={actor.id}>
                 {actor.profile_path === null ? (
-                  <img src='placeholder.jpg' alt='Placeholder' />
+                  <img className="placeholder" src='placeholder.jpg' alt='Placeholder' />
                 ) : (
-                  <img src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
+                  <img className="actor-image" src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
                 )}
-                <p>{actor.name} {actor.character}</p>
+                <p className="cast-name">{actor.name} {actor.character}</p>
               </div>
             ))}
           </div>
         </>
       )}
     </div>
+    <Footer/>
   </main>
+  
+  
 
     );
 }
