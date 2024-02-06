@@ -1,9 +1,6 @@
 import AboutPage from "../pages/AboutPage";
-
 import {useEffect, useState} from "react";
 import Search from "./Search";
-
-
 import { createBrowserRouter, Link } from "react-router-dom";
 
 function Header(){
