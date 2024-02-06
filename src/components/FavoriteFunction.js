@@ -3,10 +3,11 @@ import MovieCard from "./MovieCard";
 
 const FavoriteList = ({ movie }) => {
   const [favorites, setFavorites] = useState([]);
+  const [favoriteButton,setFavoriteButton] = useState(false);
 
 
   const addFavorite = () => {
-
+    setFavoriteButton(!favoriteButton);
     const hasFavorted = favorites.some((item) => item.id === movie.id);
     if(!hasFavorted){
     const newFavorite = {
@@ -30,15 +31,15 @@ const FavoriteList = ({ movie }) => {
 
   return (
     <div>
-      <button onClick={addFavorite}>Add Favorite</button>
+      <button onClick={addFavorite} className= {`${favoriteButton ? "favorite-button-active":"favorite-button"  }`}>&#9733;</button>
      
-      <ul>
+      {/* <ul>
         {favorites.map((favorite) => (
           <li key={favorite.id}>{favorite.title}{favorite.moviePortrait}</li>
           
         ))}
         
-      </ul>
+      </ul> */}
     </div>
   );
 };

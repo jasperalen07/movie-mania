@@ -10,7 +10,7 @@ console.log(moviesData);
 
     return (
         <section className="movies-container">
-            <h2>{title}</h2>
+            <h2 className="subHeading">{title}</h2>
             <div className="movie-cards">
 
         {moviesData.map(movie =>(

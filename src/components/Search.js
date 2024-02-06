@@ -17,6 +17,7 @@ function Search() {
   };
 
   return (
+    <div className='search-bar'>
     <form
       method='get'
       className='search_form'
@@ -26,8 +27,9 @@ function Search() {
     >
       <label className='search'></label>
       <input type='text' id='search-input' name='search' placeholder = "Search"/>
-      <button type="submit">Search</button>
+      <button type="submit" className='search-button'>&#128269;</button>
     </form>
+    </div>
   );
 }
 

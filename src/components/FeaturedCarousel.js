@@ -4,7 +4,7 @@ import { getPopularMovies } from '../utilities/api.js';
 import { useNavigate, Link } from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../scss/components/FeaturedCarousel.scss'
+
 
 const truncateOverview = (overview, maxLength) => {
   if (overview.length <= maxLength) {

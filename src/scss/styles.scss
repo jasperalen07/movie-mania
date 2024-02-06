@@ -1,4 +1,13 @@
 @use "./components/movieCard";
 @use "./components/headers";
 @use "./components/images";
+@use "./pages/pageHome";
+@use "./components/searchbar";
+@use "./components/FeaturedCarousel.scss";
+@use "./components/navMiddle";
+@use "./components/variables" as *;
 
+
+body{
+    background-color: $backgroundColor;
+}
