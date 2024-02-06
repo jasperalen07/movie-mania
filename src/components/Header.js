@@ -1,9 +1,7 @@
 import AboutPage from "../pages/AboutPage";
-import Favicon from "../images/favicon.svg";
+import {  Favicon} from "module";
 import {useEffect, useState} from "react";
 import Search from "./Search";
-
-
 import { createBrowserRouter, Link } from "react-router-dom";
 
 function Header(){
