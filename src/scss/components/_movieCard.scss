@@ -1,13 +1,30 @@
-body{background-color: grey}
+@use "variables" as *;
+
+
+
 
 .movie-container{
     position: relative;
-    max-width:max-content;
+    
+    
+    
+    
+    
+    
+    
 }
 .movie-container img{
     width: fit-content;
 }
 
+.movie-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top:2rem ;
+}
 .details{
     position: absolute;
     top: 10px;
@@ -18,13 +35,28 @@ body{background-color: grey}
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 80%;
-    max-height: 50%;
+    max-height: 60%;
     color: white;
     padding-left: 10%;
     padding-right: 10%;
     padding-top:10%;
     
+    
 }
+.details-button {
+    color: white;
+    background-color: black;  
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 5rem;
+    height: 2rem;
+    transform: translateX(-50%);
+    padding: 0;
+    border: none;
+    border-radius: 40%;
+}
+
 .rating{
     position: absolute;
     top: 0;
@@ -32,16 +64,31 @@ body{background-color: grey}
     transform: translateY(-100%);
 
 }
-.button{
-    color: black;
-    background-color: white;
+
+
+.favorite-button{
+    font-size: 2rem;
+    color: white;
+    border: none;
+    padding: 0;
+    background: none;
     position: absolute;
-
-    left: 50%;
-    bottom: 10px;
-    width: 5rem;
-    height: 2rem;
-    transform: translateX(-50%);
+    top: 0;
+    right: 20%;
     
-
+    
+}
+.favorite-button-active{
+    color: gold;
+    font-size: 2rem;
+    border: none;
+    padding: 0;
+    background: none;
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+.subHeading{
+    text-align: center;
+    color: $navFontColors;
 }

@@ -10,16 +10,18 @@ function MovieCard({movie}){
         
 
         <main>
-            <div key={movie.id} className="movie-card" onClick={() => {
+            {/* <div key={movie.id} className="movie-card" onClick={() => {
                 navigate(`/movie/${movie.id}`);
               }} >
                 <Link>{movie.original_title}</Link>
                 </div>
                 <p>{formatReleaseDate(movie.release_date)}</p>
-                <p>Rating: {movie.vote_average}</p>
-                
+                <p>Rating: {movie.vote_average}</p> */}
+                <div className="movie-wrapper">
                 <ImageComponent movie = {movie}></ImageComponent>
+                
                 <FavoriteList movie = {movie}></FavoriteList>
+                </div>
                 {/* Moved into ImageFunctions to make code cleaner.
                 
                 <img

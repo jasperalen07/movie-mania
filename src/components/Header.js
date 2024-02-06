@@ -1,5 +1,5 @@
 import AboutPage from "../pages/AboutPage";
-
+import Favicon from "../images/favicon.svg";
 import {useEffect, useState} from "react";
 import Search from "./Search";
 
@@ -13,15 +13,12 @@ function Header(){
         <nav>
             <ul  className="navbar">
                 <li>
-                    <Link to ="/"><img className="favicon" src="" alt="favicon" /></Link>
+                    <Link to ="/"><img className="favicon" src={Favicon} alt="favicon" /></Link>
                 </li>
                 <li><Search/></li>
                 <button onClick  = {() => {
                     //once clicked, turns showNav to the other
-                    setShowNAV (!showNav);
-                }}
-                className="menu"
-                > X</button>
+                    setShowNAV (!showNav);}}className="menu"> &#8801;</button>
                 {/* decalres if class name is show or hide. */}
             </ul>
                 <div className={`${showNav ? "show" : "hide"}`}>

@@ -4,22 +4,22 @@
 
    
  return(
- <div>
+ <div className="nav-middle">
     <button onClick={()=>{
         setCategoryName('Popular')
-    }}>Popular</button>
+         }}>Popular</button>
 
-<button onClick={()=>{
+    <button onClick={()=>{
         setCategoryName('Top Rated')
-    }}>Top Rated</button>
+         }}>Top Rated</button>
     
-<button onClick={()=>{
+    <button onClick={()=>{
         setCategoryName('Upcoming')
-    }}>Upcoming</button>
+         }}>Upcoming</button>
 
-<button onClick={()=>{
+    <button onClick={()=>{
         setCategoryName('Now Playing')
-    }}>Now Playing</button>
+         }}>Now Playing</button>
 
 
  </div> 

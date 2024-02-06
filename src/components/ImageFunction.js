@@ -40,7 +40,7 @@ const ImageComponent = ({ movie }) => {
                 navigate(`/movie/${movie.id}`);
               }} >
         
-        <button className="button">Details</button>
+        <button className="details-button">More Info</button>
         
         </div>
         
