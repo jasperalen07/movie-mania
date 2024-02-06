@@ -69,7 +69,7 @@ function PageSingleMovie() {
               
             <h1 className="movie-title">{movieData.title}</h1>
             <div className="movie-release-date">
-                <h2 className="movie-date">{formatReleaseDate(movieData.release_date)}</h2>
+                <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
                 
                 <p className="movie-overview">{movieData.overview}</p>
 
