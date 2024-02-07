@@ -70,6 +70,18 @@ function PageSingleMovie() {
             <h1 className="movie-title">{movieData.title}</h1>
             <div className="movie-release-container">
                 <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
+
+              <div className="genre-container">
+                <ul className="movie-genre">
+                  {movieData.genres.map((genre, index) =>(
+                    <li key={index}>
+                      {index > 0 ? ' ' : ''}
+                      {genre.name}
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
                 
                 <p className="movie-overview">{movieData.overview}</p>
 

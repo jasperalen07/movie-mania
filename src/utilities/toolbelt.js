@@ -11,7 +11,7 @@ function truncate (input) {
         const dateObject = new Date (date);
         const options = {
             year: "numeric",
-            month: "long",
+            month: "short",
             day: "numeric"
         };
         return dateObject.toLocaleDateString("en-US", options);
