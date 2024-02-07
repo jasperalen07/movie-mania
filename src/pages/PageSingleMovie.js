@@ -68,7 +68,7 @@ function PageSingleMovie() {
               <>
               
             <h1 className="movie-title">{movieData.title}</h1>
-            <div className="movie-release-date">
+            <div className="movie-release-container">
                 <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
                 
                 <p className="movie-overview">{movieData.overview}</p>
@@ -91,7 +91,8 @@ function PageSingleMovie() {
               )}
             </div>
           </div>
-          <div className="cast-lists">
+            <h2>Casts</h2>
+          <div className="cast-container">
             {movieData.credits.cast.slice(0, 5).map((actor) => (
               <div key={actor.id}>
                 {actor.profile_path === null ? (

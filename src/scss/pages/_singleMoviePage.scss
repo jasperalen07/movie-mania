@@ -6,9 +6,10 @@ body {
 
 .backdrop-image {
     width: 100%;
-    height: 80%;
-    margin-bottom: 1rem;
-    padding: auto;;
+        height: 80%;
+        margin-bottom: 1rem;
+        display: none;
+
 }
 
 .poster-container {
@@ -18,21 +19,45 @@ body {
 
 }
 
+.poster-image {
+    margin: 2rem;
+}
+
 .movie-details {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.movie-release-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+    
 }
 
 .movie-videos {
     iframe{
         width: 100%;
-        height: 100%;
+        height: 40vh;
     }
 }
 
@@ -40,28 +65,70 @@ h1 {
     font-size: 1rem;
 }
 
-.cast-list {
+.cast-container {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    // overflow-x: auto;
     padding: 1rem 0;
-    align-items: center;
-    margin-right: 1rem;
+    
 
     .cast-name {
         color: $castNameColor;
     }
 
     .actor-image {
-        width: 3.2rem;
-        height: 3.2rem;
-        border-radius: 1.5rem;
-        object-fit: cover;
-        margin-right: 0.5rem;
+        flex: 1 0 calc(20% - 10px);
+        height: 65%;
+        
 
     }
 
     .placeholder {
         background-color: lightgray;
+    }
+
+}
+
+@media screen and (min-width:48rem){
+    .backdrop-image{
+        width: 700px;
+        height: auto;
+        margin-bottom: 1rem;
+        display: block;
+        object-fit: contain;
+        position: relative;
+       
+    }
+
+    .movie-videos {
+        iframe{
+            width: 50%;
+            height: 100%;
+        }
+    }
+
+
+    .poster-container{
+        align-items: flex-start;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+
+    }
+
+    .actor-image{
+        width: 20%;
+        height: 30%;
+        flex: 0 0 calc(20% - 10px); ;
+    }
+
+   h2 {
+       align-items: flex-start;
+    }
+
+    h1 {
+        justify-content: center;
     }
 
 }
