@@ -15,7 +15,7 @@ const truncateOverview = (overview, maxLength) => {
 const FeaturedCarousel = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
   const CustomPrevArrow = (props) => (
-    <div {...props} className="slick-arrow slick-prev">
+    <div {...props} className="slick-arrow slick-prev slick-button-customize">
       {/* Customize the previous arrow (e.g., use an icon) */}
       <span>&lt;</span>
     </div>
@@ -55,10 +55,11 @@ const FeaturedCarousel = () => {
   return (
     <Slider {...settings}>
       {featuredMovies.map(movie => (
-        <div key={movie.id}>
+        <div className='carousel-flex-contiainer' key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
-          <h3>{movie.title}</h3>
-          <p>{truncateOverview(movie.overview, 100)}</p>
+          <div class="black-border"></div>
+          <h3 className='banner-movie-title'>{movie.title}</h3>
+          <p className='banner-movie-description'>{truncateOverview(movie.overview, 100)}</p>
           {/* Add additional movie information or styling as needed */}
         </div>
       ))}

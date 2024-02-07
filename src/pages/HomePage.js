@@ -68,7 +68,7 @@ function HomePage() {
          <Header>
             <Search />
          </Header>
-         {/* <FeaturedCarousel /> */}
+         <FeaturedCarousel />
 
          <Categories catergoryName={catergoryName} setCategoryName={setCategoryName} />
          {catergoryName === 'Popular' && (

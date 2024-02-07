@@ -24,7 +24,7 @@
 
 #search-input{
     height: 3rem;
-    width: 30rem;
+    width: 40rem;
     
     
     
@@ -33,21 +33,21 @@
 }
 @media screen and (min-width:1250px){
     #search-input{
-        width: 80vh;
+        width: 50rem;
     }
 
     
 }
-@media screen and (max-width:640px){
+@media screen and (max-width:780px){
     #search-input{
-        width: 40vh;
+        width: 20vh;
     }
 
     
 }
 @media screen and (max-width:560px){
     #search-input{
-        width:30vh;
+        width:15vh;
     }
 
     
