@@ -31,6 +31,7 @@ const ImageComponent = ({ movie }) => {
         src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
         alt={`Backdrop for ${movie.original_title}`}
         onClick={() => {
+            // if windowwidth = 631px, apply function. 
             const windowWidth = window.innerWidth;
             if(windowWidth <= 631){
                 handleImageClick();

@@ -1,4 +1,5 @@
 @use "variables" as *;
+// movies catogery flex box
 .nav-middle{
     display: flex;
     align-items: center;
@@ -14,10 +15,12 @@
         flex: 1 1 calc(25% - 50%); 
         margin: 5px; 
         box-sizing: border-box; 
+        cursor: pointer;
         
     }
-}
 
+}
+// make flex box only show two per row.
 @media (max-width:450px){
     button{
         flex: 1 1 calc(50% - 10px);

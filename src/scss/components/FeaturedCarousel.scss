@@ -1,3 +1,4 @@
+@use 'variables' as *;
 /* FeaturedCarousel.scss */
 .featured-movie {
     position: relative;
@@ -33,3 +34,54 @@
 
   }
   
+.slick-next{
+  right: 0%;
+  z-index: 999;
+  
+}
+.slick-prev{
+  left: 0%;
+  z-index: 999;
+}
+.slick-slide img{
+  width: 100%;
+  position: relative;
+
+}
+.black-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.082) 50%, rgba(51, 51, 51, 0.233));
+}
+
+.carousel-flex-container{
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+
+}
+.banner-movie-title{
+  position: absolute;
+  bottom: 15%;
+  margin-left: 5%;
+  z-index: 999;
+  color:$movieTitleColors;
+}
+.banner-movie-description{
+  position: absolute;
+  bottom: 0;
+  margin-left: 5%;
+  z-index: 999;
+  max-width: 30rem;
+  max-height: fit-content;
+  color:$movieDescriptionColors;
+  
+  
+
+  
+
+}

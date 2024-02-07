@@ -13,7 +13,7 @@ function Header(){
                 <li>
                     <Link to ="/"><img className="favicon" src={Favicon} alt="favicon" /></Link>
                 </li>
-                <li><Search/></li>
+                <li className="search-listing"><Search/></li>
                 <button onClick  = {() => {
                     //once clicked, turns showNav to the other
                     setShowNAV (!showNav);}}className="menu"> &#8801;</button>
