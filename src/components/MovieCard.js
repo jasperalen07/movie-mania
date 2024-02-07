@@ -9,7 +9,7 @@ function MovieCard({movie}){
 
         
 
-        <main>
+        <div className="movie-card-flex-wrapper"n>
             {/* <div key={movie.id} className="movie-card" onClick={() => {
                 navigate(`/movie/${movie.id}`);
               }} >
@@ -31,7 +31,7 @@ function MovieCard({movie}){
                             />  */}
         
                             
-                            </main>
+                            </div>
     );
 }
 

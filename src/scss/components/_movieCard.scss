@@ -1,10 +1,54 @@
 @use "variables" as *;
 
 
+.movies-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.movie-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    
+}
+@media screen and (max-width:839px) and (min-width:632px){
+    .movie-cards{
+        justify-content: flex-start;
+       
+        
+    }
+    .movie-wrapper{
+        flex: 1;
+    }
+    .movie-card-flex-wrapper{
+        flex:1;
+    }
+    .movie-cards::after {
+        content: "";
+        flex: auto;
+      }
+}
+@media screen and (min-width:1256px){
+    .movie-cards{
+        justify-content: flex-start;
+        margin-left: 5rem;
+    }
+
+}
 
 
 .movie-container{
     position: relative;
+
+    
     
     
     
@@ -74,7 +118,7 @@
     background: none;
     position: absolute;
     top: 0;
-    right: 20%;
+    right: 5%;
     
     
 }

@@ -9,6 +9,9 @@ const ImageComponent = ({ movie }) => {
     // set showParagraph and darkerImage to false
     const [showParagraph , setShowParagraph] = useState(false);
     const [darkerImage, setDarkerImage] = useState(false);
+    
+    
+
 
     
     // handleImageClick function, inverse the boolean when click on the image.
@@ -18,6 +21,7 @@ const ImageComponent = ({ movie }) => {
     };
 
     const navigate = useNavigate();
+    
 
     return (
         <div className="movie-container">
@@ -26,9 +30,17 @@ const ImageComponent = ({ movie }) => {
         className= {`${darkerImage ? "darkImage" : "BrightImage"}`}
         src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
         alt={`Backdrop for ${movie.original_title}`}
-        onClick={handleImageClick}
+        onClick={() => {
+            const windowWidth = window.innerWidth;
+            if(windowWidth <= 631){
+                handleImageClick();
+            }else{
+                navigate(`/movie/${movie.id}`);
+            }
+        }}
         
         />
+        
         {/*  give className when clicked on image */}
         <div className={`details ${showParagraph ? "show" : "hide"}`} >
         <p className="rating">{movie.vote_average}/10</p>
