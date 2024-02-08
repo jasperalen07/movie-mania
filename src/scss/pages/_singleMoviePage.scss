@@ -15,6 +15,10 @@ body {
 
 }
 
+.movie-wrapper {
+    top: 
+}
+
 .poster-container {
     display: flex;
     align-items: center;
@@ -111,6 +115,7 @@ li {
     
     .cast-name {
         color: $castNameColor;
+        
     }
     
     .actor-image {

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
 import { getMovieById } from "../utilities/api"; 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FavoriteList from "../components/FavoriteFunction";
 
 
 
@@ -16,6 +18,7 @@ function PageSingleMovie() {
   const id = params.id;
   const [movieData, setmovieData] = useState('');
   const [movieVideos, setMovieVideos] = useState([]);
+  const navigate = useNavigate();
   
 
   useEffect(() => {
@@ -52,14 +55,18 @@ function PageSingleMovie() {
 
       
         <div className="poster-container">
+          <div className="movie-wrapper">
+       
           <img
           className="poster-image"
            src={`https://image.tmdb.org/t/p/w200${movieData.poster_path}`}
            alt={`Backdrop for ${movieData.original_title}`}
           ></img>
-
+              <FavoriteList movie = {movieData}></FavoriteList>
+</div>
         </div>
-
+      
+      
      
            
            
@@ -68,6 +75,9 @@ function PageSingleMovie() {
               <>
               
             <h1 className="movie-title">{movieData.title}</h1>
+
+               
+
             <div className="movie-release-container">
                 <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
 
@@ -84,6 +94,7 @@ function PageSingleMovie() {
               </div>
                 
                 <p className="movie-overview">{movieData.overview}</p>
+
 
                 <div className="movie-videos">
                  {movieVideos.length > 0 ? (
@@ -112,7 +123,8 @@ function PageSingleMovie() {
                 ) : (
                   <img className="actor-image" src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
                 )}
-                <p className="cast-name">{actor.name} {actor.character}</p>
+                <p className="cast-name">{actor.name}
+                 {actor.character}</p>
               </div>
             ))}
           </div>

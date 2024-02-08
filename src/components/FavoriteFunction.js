@@ -25,7 +25,7 @@ const FavoriteList = ({ movie }) => {
 
   return (
     <div>
-      <button onClick={addFavorite} className= {`${favoriteButton ? "favorite-button-active":"favorite-button"  }`}>&#9733;</button>
+      <button onClick={addFavorite} className={`${favoriteButton ? "favorite-button-active":"favorite-button"  }`}>&#9733;</button>
      
       {/* <ul>
         {favorites.map((favorite) => (
