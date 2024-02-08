@@ -11,13 +11,15 @@ const FavoriteList = ({ movie }) => {
   const addFavorite = () => {
     setFavoriteButton(!favoriteButton);
     const hasFavorited = favorites.some((item) => item.id === movie.id);
-    localStorage.setItem('favorites', JSON.stringify([...favorites, movie]));
 
     if (!hasFavorited) {
-      setFavorites([...favorites, movie]);
+      const newFavorites = [...favorites, movie];
+      setFavorites(newFavorites);
+      localStorage.setItem('favorites', JSON.stringify(newFavorites));
     } else {
       const updatedFavorites = favorites.filter((item) => item.id !== movie.id);
       setFavorites(updatedFavorites);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     }
   };
 

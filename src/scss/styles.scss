@@ -11,6 +11,27 @@
 
 body{
     background-color: $backgroundColor;
+    font-size: 1.25rem;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: #787878;
+}
+
+.instagram {
+    padding: 0.5rem;
+}
+
+.facebook {
+    padding: 0.5rem;
+}
+
+.linkedin {
+    padding: 0.5rem;
 }
 @media screen and (min-width:1280px)  {
 

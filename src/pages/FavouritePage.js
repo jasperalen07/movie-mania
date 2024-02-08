@@ -5,8 +5,7 @@ import Footer from "../components/Footer";
 import { useEffect, useState } from 'react';
 import { getMovieById } from '../utilities/api';
 
-
-function FavouritePage({movie}) {
+function FavouritePage() {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const [favoriteMovies, setFavoriteMovies] = useState([]);
 
@@ -18,26 +17,20 @@ function FavouritePage({movie}) {
             .then(movies => setFavoriteMovies(movies))
             .catch(error => console.error('Error fetching favorite movies:', error));
     }, []);
+
     return (
-        
         <main>
             <Header />
-            <FavoriteList movie ={movie} />
+            {/* No need to pass 'movie' prop to FavoriteList */}
+            <FavoriteList />
             <h1>Favorite Movies</h1>
-      <div className="movie-cards">
-        {favorites.map((favorite) => (
-          <MovieCard key={favorite.id} movie={favorite} />
-        ))}
-      </div>
-
-
-
+            <div className="movie-cards">
+                {favoriteMovies.map((favorite) => (
+                    <MovieCard key={favorite.id} movie={favorite} />
+                ))}
+            </div>
             <Footer />
         </main>
-
-
-
-
     );
 }
 
