@@ -149,14 +149,14 @@
         
         
     }
+    .movie-wrapper{
+        flex: 1;
+    }
 
     .movie-card-flex-wrapper{
         flex:1;
     }
-    .movie-cards::after {
-        content: "";
-        flex: auto;
-      }
+
 
     
 

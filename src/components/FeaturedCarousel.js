@@ -60,7 +60,6 @@ const FeaturedCarousel = () => {
           <div class="black-border"></div>
           <h3 className='banner-movie-title'>{movie.title}</h3>
           <p className='banner-movie-description'>{truncateOverview(movie.overview, 100)}</p>
-          {/* Add additional movie information or styling as needed */}
         </div>
       ))}
     </Slider>
