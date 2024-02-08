@@ -33,11 +33,12 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    
 }
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 0.5rem ;
+   margin-bottom: 1rem ;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -53,15 +54,35 @@ h2{
 }
 
 .genre-container {
-   display: flex;
-   justify-content: center;
-   flex-wrap: nowrap;
+  border-radius: 10px;
+  
 }
 .movie-genre {
     
     list-style: none;
-
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+li {
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-bottom: 5px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    span{
+        border-radius: 5px;
+        padding: 5px 10px;
+        border: solid 2px white;
+        margin-right: 5px;
+    }
+}
+
 
 
 .movie-videos {
@@ -72,7 +93,7 @@ h2{
 }
 
 .movie-date {
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 
@@ -104,14 +125,16 @@ h2{
 
 @media screen and (min-width:48rem){
     .backdrop-image{
+        height: 30%;
         width: 100%;
-        height: auto;
         margin-bottom: 1rem;
         display: block;
-        object-fit: contain;
-        position: relative;
+        object-fit: cover;
+        
         
     }
+
+    
     
     .movie-videos {
         iframe{
@@ -150,6 +173,10 @@ h2{
       word-wrap: break-all;
       width: 20rem;
       
+    }
+
+    li {
+        font-size: 1.3rem;
     }
 }
 

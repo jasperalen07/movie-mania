@@ -41,6 +41,8 @@ const ImageComponent = ({ movie }) => {
         }}
         
         />
+
+ 
         
         {/*  give className when clicked on image */}
         <div className={`details ${showParagraph ? "show" : "hide"}`} >

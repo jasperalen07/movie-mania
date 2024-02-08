@@ -76,7 +76,7 @@ function PageSingleMovie() {
                   {movieData.genres.map((genre, index) =>(
                     <li key={index}>
                       {index > 0 ? ' ' : ''}
-                      {genre.name}
+                      <span>{genre.name}</span>
                     </li>
                   ))}
                 </ul>
