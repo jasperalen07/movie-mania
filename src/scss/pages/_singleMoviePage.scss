@@ -28,7 +28,7 @@ body {
 .movie-videos {
     iframe{
         width: 100%;
-        height: 40vh;
+        height: 200px;
     }
 }
 
@@ -142,8 +142,9 @@ li {
     
     .movie-videos {
         iframe{
-            width: 50%;
-            height: 100%;
+            width: 34.375rem;
+            height: 21.875rem;
+            
         }
     }
     
