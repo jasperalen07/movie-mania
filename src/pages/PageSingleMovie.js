@@ -114,7 +114,7 @@ function PageSingleMovie() {
               )}
             </div>
           </div>
-            <h2>Casts</h2>
+            <h2>Main Casts</h2>
           <div className="cast-container">
             {movieData.credits.cast.slice(0, 5).map((actor) => (
               <div key={actor.id}>
@@ -123,8 +123,11 @@ function PageSingleMovie() {
                 ) : (
                   <img className="actor-image" src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
                 )}
-                <p className="cast-name">{actor.name}
-                 {actor.character}</p>
+
+                <div className="cast-name-container">
+                <p className="cast-name">{actor.name}</p>
+                 <p className="char-name">{actor.character}</p>
+                </div>
               </div>
             ))}
           </div>

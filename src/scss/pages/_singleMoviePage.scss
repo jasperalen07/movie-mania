@@ -15,9 +15,7 @@ body {
 
 }
 
-.movie-wrapper {
-    top: 
-}
+
 
 .poster-container {
     display: flex;
@@ -115,18 +113,28 @@ li {
     
     .cast-name {
         color: $castNameColor;
-        
+    }
+
+    .char-name{
+        margin: 1rem;
     }
     
     .actor-image {
         flex: 1 0 calc(20% - 10px);
-        height: 65%;
+        height: 200px;
+        width: 180px;
         
         
     }
 
     .placeholder {
         background-color: lightgray;
+    }
+
+    .cast-name-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     
 }
@@ -162,11 +170,7 @@ li {
         
     }
     
-    .actor-image{
-        width: 20%;
-        height: 30%;
-        flex: 0 0 calc(20% - 10px); ;
-    }
+
     
     h2 {
         align-items: flex-start;
