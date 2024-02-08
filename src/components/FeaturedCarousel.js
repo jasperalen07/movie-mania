@@ -56,7 +56,7 @@ const FeaturedCarousel = () => {
     <Slider {...settings}>
       {featuredMovies.map(movie => (
         <div className='carousel-flex-contiainer' key={movie.id}>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
+          <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
           <div class="black-border"></div>
           <h3 className='banner-movie-title'>{movie.title}</h3>
           <p className='banner-movie-description'>{truncateOverview(movie.overview, 100)}</p>

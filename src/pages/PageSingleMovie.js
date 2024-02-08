@@ -44,13 +44,13 @@ function PageSingleMovie() {
       <div className="backdrop-container">
       <img
            className="backdrop-image"
-           src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
+           src={`https://image.tmdb.org/t/p/w1280${movieData.backdrop_path}`}
            alt={`Backdrop for ${movieData}`}
            ></img>
 
       </div>
 
-      <div className="movie-poster">
+      
         <div className="poster-container">
           <img
           className="poster-image"
@@ -60,7 +60,7 @@ function PageSingleMovie() {
 
         </div>
 
-      </div>
+     
            
            
 
