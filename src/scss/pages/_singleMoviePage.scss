@@ -4,8 +4,9 @@ body {
     color: white;
 }
 
+//-----Mobile-------------------------------------------------------------------------------
 
-
+//-----Movie poster , Banner & Trailer-----------------------------------------------------------------
 .backdrop-image {
     width: 100%;
         height: 80%;
@@ -24,20 +25,14 @@ body {
 .poster-image {
     margin: 2rem;
 }
-
-.movie-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.movie-videos {
+    iframe{
+        width: 100%;
+        height: 40vh;
+    }
 }
 
-.movie-release-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-}
-
+//-----Headers-----------------------------------------------------------------
 h1 {
     font-size: 2rem;
    margin-bottom: 1rem ;
@@ -54,6 +49,25 @@ h2{
     align-items: center;
     flex-direction: column;
 }
+
+//-----Movie overview, Movie genre, & Movie release date-----------------------------------------------------------------
+
+// .movie-details {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+.movie-release-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.movie-date {
+    font-size: 1.3rem;
+}
+
 
 .genre-container {
   border-radius: 10px;
@@ -86,20 +100,7 @@ li {
 }
 
 
-
-.movie-videos {
-    iframe{
-        width: 100%;
-        height: 40vh;
-    }
-}
-
-.movie-date {
-    font-size: 1.3rem;
-}
-
-
-
+//-----Casting-----------------------------------------------------------------
 .cast-container {
     display: flex;
     flex-wrap: wrap;
@@ -125,7 +126,7 @@ li {
     
 }
 
-// Desktop 
+//-----Desktop-----------------------------------------------------------------
 @media screen and (min-width:48rem){
     .backdrop-image{
         height: 20rem;
@@ -172,8 +173,8 @@ li {
     .movie-overview {
        line-height: 1.5;
        padding: 1rem;
-       margin: 2rem;
-      word-wrap: break-all;
+       margin: 1rem;
+      word-wrap: normal;
       width: 20rem;
       
     }
