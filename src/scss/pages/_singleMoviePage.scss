@@ -23,11 +23,13 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 2rem;
 
 }
 
 .poster-image {
-    margin: 2rem;
+    position: relative;
+    
 }
 .movie-videos {
     iframe{
