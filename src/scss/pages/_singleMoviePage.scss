@@ -104,7 +104,7 @@ h2{
 
 @media screen and (min-width:48rem){
     .backdrop-image{
-        width: 700px;
+        width: 100%;
         height: auto;
         margin-bottom: 1rem;
         display: block;
@@ -148,6 +148,7 @@ h2{
        padding: 1rem;
        margin: 2rem;
       word-wrap: break-all;
+      width: 20rem;
       
     }
 }
