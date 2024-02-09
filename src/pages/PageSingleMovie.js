@@ -75,12 +75,13 @@ function PageSingleMovie() {
               <>
               
             <h1 className="movie-title">{movieData.title}</h1>
-                  <p className="movie-duration">{formatRunTime(movieData.runtime)}</p>
 
                
 
             <div className="movie-release-container">
                 <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
+                
+                  <p className="movie-duration">{formatRunTime(movieData.runtime)}</p>
                 <p className="movie-ratings">{movieData.vote_average}</p>
 
               <div className="genre-container">
