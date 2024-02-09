@@ -120,6 +120,15 @@ li {
     font-size: 1rem;
 }
 
+.movie-overview {
+    line-height: 1.5;
+    padding: 1rem 2rem;
+    margin: 1rem;
+   word-wrap: normal;
+   width: 20rem;
+   
+ }
+
 
 //-----Casting-----------------------------------------------------------------
 .cast-container {
@@ -219,14 +228,14 @@ li {
         justify-content: center;
     }
     
-    .movie-overview {
-       line-height: 1.5;
-       padding: 1rem;
-       margin: 1rem;
-      word-wrap: normal;
-      width: 20rem;
+    // .movie-overview {
+    //    line-height: 1.5;
+    //    padding: 1rem;
+    //    margin: 1rem;
+    //   word-wrap: normal;
+    //   width: 20rem;
       
-    }
+    // }
 
     li {
         font-size: 1.3rem;
@@ -247,6 +256,13 @@ li {
     .movie-duration{
         font-size: 1rem;
     }
+
+    .movie-overview {
+       word-wrap: normal;
+       width: 35rem;
+       overflow: auto;
+       
+     }
 }
 
 
