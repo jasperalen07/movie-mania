@@ -2,6 +2,7 @@ import MovieCard from "./MovieCard";
 import {useState} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { formatReleaseDate } from "../utilities/toolbelt";
+import NoImage from "../images/No-Image.jpg"
 
 
 // function for movies
@@ -42,6 +43,10 @@ const ImageComponent = ({ movie }) => {
         className= {`${darkerImage ? "darkImage" : "BrightImage"}`}
         src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
         alt={`Backdrop for ${movie.original_title}`}
+        onError={(e) => {
+            
+            e.target.src = NoImage;
+          }}
         onClick={() => {
             // if windowwidth = 631px, apply function. 
             const windowWidth = window.innerWidth;
