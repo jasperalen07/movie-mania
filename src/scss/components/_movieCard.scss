@@ -107,49 +107,32 @@
     text-align: center;
     color: $navFontColors;
 }
-
-// makes flex box align
-@media screen and (max-width:839px) and (min-width:632px){
+@media screen and (max-width:823px) and (min-width:616px){
     .movie-cards{
         justify-content: flex-start;
-       
-        
-    }
-    .movie-wrapper{
-        flex: 1;
     }
     .movie-card-flex-wrapper{
-        flex:1;
+        flex: 1;
+    }
+        .movie-cards::after {
+        content: "";
+        flex: auto;
+    }
+    .favorite-button{
+        right: 15%;
+    }
+    .favorite-button-active{
+        right: 15%;
+    }
+}
+@media screen and (min-width:1550px) {
+    .movie-cards{
+        justify-content: space-evenly;
+        
     }
     .movie-cards::after {
         content: "";
         flex: auto;
-      }
-      .favorite-button{
-        
-        right: 15%;
-
-      }
-      .favorite-button-active{
-        right: 15%;
-      }
-}
-// for wider screen
-@media screen and (min-width:1256px){
-    .movie-cards{
-        justify-content: space-evenly;
-        
-        
     }
-    .movie-wrapper{
-        flex: 1;
-    }
-
-    .movie-card-flex-wrapper{
-        flex:1;
-    }
-
-
     
-
 }

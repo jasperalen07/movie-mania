@@ -9,6 +9,7 @@ const ImageComponent = ({ movie }) => {
     // set showParagraph and darkerImage to false
     const [showParagraph , setShowParagraph] = useState(false);
     const [darkerImage, setDarkerImage] = useState(false);
+   
     
     
 
@@ -18,13 +19,24 @@ const ImageComponent = ({ movie }) => {
     const handleImageClick = () => {
         setShowParagraph(!showParagraph);
         setDarkerImage(!darkerImage);
+
+    
     };
+
+    
 
     const navigate = useNavigate();
     
 
     return (
-        <div className="movie-container">
+        <div className="movie-container" 
+        onMouseEnter={() => {setShowParagraph(true)
+                             setDarkerImage(true)
+}}
+o       nMouseLeave={() => {setShowParagraph(false)
+                            setDarkerImage(false)
+}}>
+        
         <img
         // give className when clicked on image
         className= {`${darkerImage ? "darkImage" : "BrightImage"}`}
@@ -36,9 +48,14 @@ const ImageComponent = ({ movie }) => {
             if(windowWidth <= 631){
                 handleImageClick();
             }else{
+                
+
+                
                 navigate(`/movie/${movie.id}`);
             }
+            
         }}
+
         
         />
 
