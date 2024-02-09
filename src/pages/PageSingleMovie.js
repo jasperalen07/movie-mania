@@ -81,6 +81,7 @@ function PageSingleMovie() {
 
             <div className="movie-release-container">
                 <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
+                <p className="movie-ratings">{movieData.vote_average}</p>
 
               <div className="genre-container">
                 <ul className="movie-genre">
