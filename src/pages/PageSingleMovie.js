@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
-import { formatReleaseDate, filterVideos } from "../utilities/toolbelt";
+import { formatReleaseDate, filterVideos, formatRunTime } from "../utilities/toolbelt";
 import { getMovieById } from "../utilities/api"; 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -75,6 +75,7 @@ function PageSingleMovie() {
               <>
               
             <h1 className="movie-title">{movieData.title}</h1>
+                  <p className="movie-duration">{formatRunTime(movieData.runtime)}</p>
 
                
 
