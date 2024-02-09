@@ -65,24 +65,64 @@
 
 
 }
+.banner-movie-description{
+  display: none;
+}
 .banner-movie-title{
   position: absolute;
-  bottom: 15%;
-  margin-left: 5%;
   z-index: 999;
-  color:$movieTitleColors;
+  bottom: -10%;
+  margin-left: 5%;
+  color: $movieTitleColors;
+
 }
-.banner-movie-description{
-  position: absolute;
-  bottom: 0;
-  margin-left: 5%;
-  z-index: 999;
-  max-width: 30rem;
-  max-height: fit-content;
-  color:$movieDescriptionColors;
+@media screen and (min-width:500px)  {
+  .banner-movie-title{
+    bottom: 10%;
+    
+  }
+  .banner-movie-description{
+    display: block;
+    z-index: 999;
+    position: absolute;
+    bottom: 0%;
+    max-width: 30rem;
+    max-height: 2rem;
+    margin-left: 5%;
+    color:$movieDescriptionColors;
+  }
+  
+}
+@media screen and (min-width:900px)  {
+  .banner-movie-title{
+    bottom: 20%;
+    
+  }
+  .banner-movie-description{
+
+    bottom: 10%;
+
+  }
+  
+}
+// .banner-movie-title{
+//   position: absolute;
+//   bottom: 15%;
+//   margin-left: 5%;
+//   z-index: 999;
+//   color:$movieTitleColors;
+// }
+// .banner-movie-description{
+//   position: absolute;
+//   bottom: 0;
+//   margin-left: 5%;
+//   z-index: 999;
+//   max-width: 30rem;
+//   max-height: fit-content;
+//   color:$movieDescriptionColors;
   
   
 
   
 
-}
+// }

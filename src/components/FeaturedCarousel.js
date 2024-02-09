@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { getPopularMovies } from '../utilities/api.js';
+import { useNavigate } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -14,6 +15,7 @@ const truncateOverview = (overview, maxLength) => {
 
 const FeaturedCarousel = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
+  const navigate = useNavigate();
   const CustomPrevArrow = (props) => (
     <div {...props} className="slick-arrow slick-prev slick-button-customize">
       {/* Customize the previous arrow (e.g., use an icon) */}
@@ -55,7 +57,9 @@ const FeaturedCarousel = () => {
   return (
     <Slider {...settings}>
       {featuredMovies.map(movie => (
-        <div className='carousel-flex-contiainer' key={movie.id}>
+        <div className='carousel-flex-contiainer' key={movie.id} onClick={() => {
+          navigate(`/movie/${movie.id}`);
+        }}>
           <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
           <div class="black-border"></div>
           <h3 className='banner-movie-title'>{movie.title}</h3>
