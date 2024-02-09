@@ -3,6 +3,7 @@ export default
 
 
 function Footer() {
+    const currentYear = new Date().getFullYear();
     return(
         <footer>
 
@@ -17,7 +18,7 @@ function Footer() {
         
             </div>
 
-            <p>&copy; Dale, Winson, Alen</p>
+            <p> Dale, Winson, Alen &copy; {currentYear}</p>
 
         
 

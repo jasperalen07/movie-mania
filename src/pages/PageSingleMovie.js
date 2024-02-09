@@ -79,11 +79,12 @@ function PageSingleMovie() {
                
 
             <div className="movie-release-container">
+              <div className="movie-row-details">
                 <p className="movie-date">{formatReleaseDate(movieData.release_date)}</p>
                 
                   <p className="movie-duration">{formatRunTime(movieData.runtime)}</p>
                 <p className="movie-ratings">{movieData.vote_average}</p>
-
+                </div>
               <div className="genre-container">
                 <ul className="movie-genre">
                   {movieData.genres.map((genre, index) =>(
