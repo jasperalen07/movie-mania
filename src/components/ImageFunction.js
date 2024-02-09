@@ -22,9 +22,9 @@ const ImageComponent = ({ movie }) => {
 
     const navigate = useNavigate();
     
-
     return (
         <div className="movie-container">
+           
         <img
         // give className when clicked on image
         className= {`${darkerImage ? "darkImage" : "BrightImage"}`}

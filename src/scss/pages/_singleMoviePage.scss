@@ -24,11 +24,14 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 2rem;
+  
 
 }
 
 .poster-image {
     position: relative;
+    border-radius: 15px;
+
     
 }
 .movie-videos {
@@ -112,39 +115,50 @@ li {
     flex-wrap: wrap;
     justify-content: center;
     padding: 1rem 0;
+    gap: 1rem;
     
     
     .cast-name {
         color: $castNameColor;
+        text-align: center;
     }
 
     .char-name{
         margin: 1rem;
+        text-align: center;
     }
     
     .actor-image {
-        flex: 1 0 calc(20% - 10px);
-        height: 200px;
-        width: 170px;
         object-fit: cover;
-        
-        
+        // flex: 1 0 calc(20% - 10px);
+        height: 15rem;
+        width: 100%;
+    }
+
+    .actor-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-width: 10rem;
+        max-width: 10rem;
     }
 
     .placeholder {
         background-color: lightgray;
     }
 
-    .cast-name-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+    // .cast-name-container {
+    //     display: flex;
+    //     align-items: center;
+    //     flex-direction: column;
+    //     max-width: 15rem;
+    //     max-width: 10rem;
+    // }
     
 }
 
-//-----Desktop-----------------------------------------------------------------
-@media screen and (min-width:48rem){
+// -----------Tablet
+@media screen and (min-width:48em){
     .backdrop-image{
         height: 20rem;
         width: 100%;
@@ -154,9 +168,7 @@ li {
         
         
     }
-
-    
-    
+ 
     .movie-videos {
         iframe{
             width: 34.375rem;
@@ -164,18 +176,17 @@ li {
             
         }
     }
-    
-    
+      
     .poster-container{
         align-items: flex-start;
         position: absolute;
-        left: 0;
+        left: 3rem;
+        top: 12rem;
         z-index: 1;
         
     }
-    
-
-    
+  
+  
     h2 {
         align-items: flex-start;
     }
@@ -197,9 +208,19 @@ li {
         font-size: 1.3rem;
     }
 
+    
 
-
-   
 }
+
+
+//-----Desktop-----------------------------------------------------------------
+@media screen and (min-width:75em){
+    .poster-container{
+        left: 8rem;    
+        top: 16rem;
+    }
+}
+
+
 
 
