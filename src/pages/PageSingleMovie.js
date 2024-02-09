@@ -6,8 +6,7 @@ import { getMovieById } from "../utilities/api";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FavoriteList from "../components/FavoriteFunction";
-
-
+import MovieCastNone from "../images/movie-cast.png"
 
 
 
@@ -53,7 +52,6 @@ function PageSingleMovie() {
 
       </div>
 
-      
         <div className="poster-container">
           <div className="movie-wrapper">
        
@@ -96,6 +94,7 @@ function PageSingleMovie() {
                 </ul>
 
               </div>
+
                 
                 <p className="movie-overview">{movieData.overview}</p>
 
@@ -119,23 +118,24 @@ function PageSingleMovie() {
             </div>
           </div>
             <h2>Main Casts</h2>
-          <div className="cast-container">
-            {movieData.credits.cast.slice(0, 5).map((actor) => (
-              <div className="actor-container" key={actor.id}>
-                {actor.profile_path === null ? (
-                  <img className="placeholder" src='placeholder.jpg' alt='Placeholder' />
-                ) : (
-                  <img className="actor-image" src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
-                )}
+            <div className="cast-container">
+  {movieData.credits.cast.slice(0, 5).map((actor) => (
+    <div className="actor-container" key={actor.id}>
+      {actor.profile_path === null ? (
+        <img src={MovieCastNone} className="placeholder-cast" alt='Placeholder-cast' />
 
-                <div className="cast-name-container">
-                <p className="cast-name">{actor.name}</p>
-                 <p className="char-name">{actor.character}</p>
+      ) : (
+        <img className="actor-image" src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} alt={`${actor.name} profile`} />
+      )}
 
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="cast-name-container">
+        <p className="cast-name">{actor.name}</p>
+        <p className="char-name">{actor.character}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
         </>
       )}
     </div>

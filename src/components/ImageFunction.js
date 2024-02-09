@@ -5,6 +5,7 @@ import { formatReleaseDate } from "../utilities/toolbelt";
 import NoImage from "../images/No-Image.jpg"
 
 
+
 // function for movies
 const ImageComponent = ({ movie }) => {
     // set showParagraph and darkerImage to false
