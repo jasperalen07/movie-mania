@@ -15,10 +15,10 @@ function Header(){
                 </li>
                 <li className="search-listing"><Search/></li>
                 <li className="desktop-nav">
-                    <Link to = "../pages/AboutPage">AboutPage</Link>
+                    <Link to = "../pages/AboutPage">About</Link>
                 </li>
                 <li className="desktop-nav">
-                    <Link to ="../pages/FavouritePage">FavouritePage</Link>
+                    <Link to ="../pages/FavouritePage">Favourites</Link>
                 </li>
                 <button onClick  = {() => {
                     //once clicked, turns showNav to the other

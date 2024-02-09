@@ -66,7 +66,8 @@
 
 }
 .banner-movie-description{
-  display: none;
+
+  font-size: 0.5rem;
 }
 .banner-movie-title{
   position: absolute;
@@ -74,8 +75,9 @@
   bottom: -10%;
   margin-left: 5%;
   color: $movieTitleColors;
-
+  font-size: 1rem;
 }
+
 @media screen and (min-width:500px)  {
   .banner-movie-title{
     bottom: 10%;
@@ -91,15 +93,19 @@
     margin-left: 5%;
     color:$movieDescriptionColors;
   }
+
+  .banner-movie-description{
+    font-size: 0.7rem;
+  }
   
 }
 @media screen and (min-width:900px)  {
   .banner-movie-title{
     bottom: 20%;
-    
+    font-size: 2rem;
   }
   .banner-movie-description{
-
+    font-size: 1.5rem;
     bottom: 10%;
 
   }

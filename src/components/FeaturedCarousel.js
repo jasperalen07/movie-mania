@@ -25,7 +25,6 @@ const FeaturedCarousel = () => {
 
   const CustomNextArrow = (props) => (
     <div {...props} className="slick-arrow slick-next">
-      {/* Customize the next arrow (e.g., use an icon) */}
       <span>&gt;</span>
     </div>
   );
