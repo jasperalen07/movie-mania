@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FavoriteList from "../components/FavoriteFunction";
 import MovieCastNone from "../images/movie-cast.png"
-import MoviePosterNone from "../images/movie-poster.png"
+import MoviePosterNone from "../images/No-Image.jpg"
 
 
 
