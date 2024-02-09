@@ -18,7 +18,6 @@ const FeaturedCarousel = () => {
   const navigate = useNavigate();
   const CustomPrevArrow = (props) => (
     <div {...props} className="slick-arrow slick-prev slick-button-customize">
-      {/* Customize the previous arrow (e.g., use an icon) */}
       <span>&lt;</span>
     </div>
   );
@@ -55,7 +54,7 @@ const FeaturedCarousel = () => {
   return (
     <Slider {...settings}>
       {featuredMovies.map(movie => (
-        <div className='carousel-flex-contiainer' key={movie.id} onClick={() => {
+        <div className='carousel-flex-container' key={movie.id} onClick={() => {
           navigate(`/movie/${movie.id}`);
         }}>
           <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
