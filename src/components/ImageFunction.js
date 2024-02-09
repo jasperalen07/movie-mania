@@ -33,7 +33,7 @@ const ImageComponent = ({ movie }) => {
         onMouseEnter={() => {setShowParagraph(true)
                              setDarkerImage(true)
 }}
-o       nMouseLeave={() => {setShowParagraph(false)
+        onMouseLeave={() => {setShowParagraph(false)
                             setDarkerImage(false)
 }}>
         
