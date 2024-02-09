@@ -25,8 +25,9 @@ function FavouritePage() {
             <FavoriteList />
             <h1>Favorite Movies</h1>
             <div className="movie-cards">
-                {favoriteMovies.map((favorite) => (
-                    <MovieCard key={favorite.id} movie={favorite} />
+                {favoriteMovies.length > 0 && favoriteMovies.map((favorite) => (
+                    // Add a conditional check to ensure 'favorite' is not undefined
+                    favorite && <MovieCard key={favorite.id} movie={favorite} />
                 ))}
             </div>
             <Footer />

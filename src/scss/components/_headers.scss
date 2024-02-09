@@ -22,6 +22,7 @@ nav{
     }
     .desktop-nav{
         display: none;
+
     }
     
 
@@ -73,17 +74,20 @@ nav{
 }
 
 // adjust favicon 
-@media screen and (max-width:900px) and (min-width:780px) {
+@media screen and (max-width:1000px) and (min-width:780px) {
     .navbar{
     .favicon{
         width: 7rem;
         transform: translate(-5%,-20%);
         
     }
+    .menu{
+        font-size: 4rem;
+    }
 }
 }
 
-@media screen and (max-width:580px)  {
+@media screen and (max-width:780px)  {
     .navbar{
     .favicon{
         width: 6rem;
@@ -110,8 +114,7 @@ nav{
         display: block;
         align-self: center;
         color: $navFontColors;
-        
-        
+        font-size: 1.75rem;
     }
     .navTags{
         display: none;
