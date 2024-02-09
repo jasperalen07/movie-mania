@@ -1,11 +1,11 @@
 @use 'variables' as *;
 
-.search-bar{
+.search-bar {
     position: relative;
-    
+
 }
 
-.search-button{
+.search-button {
     font-size: 2rem;
     color: white;
     background: none;
@@ -18,34 +18,31 @@
     right: 1rem;
     top: 0.5rem;
     transform: translateY(10%);
-    
-    
+
+
 }
 
-#search-input{
+#search-input {
     height: 3rem;
     width: 5rem;
     border-radius: 20px;
     border: solid 5px lightgray;
     padding-left: 1rem;
-    
-    
+
+
 }
-@media screen and (min-width:320px) { 
-    #search-input{
-        width: 10rem;
-    }
-    
-}
-@media screen and (min-width:500px) { 
-    #search-input{
+
+
+@media screen and (min-width:450px) {
+    #search-input {
         width: 15rem;
     }
-    
+
 }
-@media screen and (min-width:1200px) { 
-    #search-input{
+
+@media screen and (min-width:1200px) {
+    #search-input {
         width: 30rem;
     }
-    
+
 }
