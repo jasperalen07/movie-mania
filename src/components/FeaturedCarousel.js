@@ -46,8 +46,7 @@ const FeaturedCarousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    prevArrow: <CustomPrevArrow />, // Customize the previous arrow component
-    nextArrow: <CustomNextArrow />,
+
   };
 
 
@@ -60,7 +59,7 @@ const FeaturedCarousel = () => {
           navigate(`/movie/${movie.id}`);
         }}>
           <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
-          <div class="black-border"></div>
+          <div className="black-border"></div>
           <h3 className='banner-movie-title'>{movie.title}</h3>
           <p className='banner-movie-description'>{truncateOverview(movie.overview, 100)}</p>
         </div>
