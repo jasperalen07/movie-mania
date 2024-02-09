@@ -7,6 +7,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FavoriteList from "../components/FavoriteFunction";
 import MovieCastNone from "../images/movie-cast.png"
+import MoviePosterNone from "../images/movie-poster.png"
+
 
 
 
@@ -18,6 +20,8 @@ function PageSingleMovie() {
   const [movieData, setmovieData] = useState('');
   const [movieVideos, setMovieVideos] = useState([]);
   const navigate = useNavigate();
+
+
   
 
   useEffect(() => {
@@ -36,7 +40,7 @@ function PageSingleMovie() {
     console.log("movieData", movieData);
     console.log("movieVideos", movieVideos);
 
-    
+  
 
     return (
       <main>
@@ -44,26 +48,32 @@ function PageSingleMovie() {
       <div className="movie-page">
 
       <div className="backdrop-container">
-      <img
-           className="backdrop-image"
-           src={`https://image.tmdb.org/t/p/w1280${movieData.backdrop_path}`}
-           alt={`Backdrop for ${movieData}`}
-           ></img>
+  {movieData.backdrop_path && (
+    <img
+      className="backdrop-image"
+      src={`https://image.tmdb.org/t/p/w1280${movieData.backdrop_path}`}
+      alt={`Backdrop for ${movieData.original_title}`}
+    />
+  )}
+</div>
 
-      </div>
 
         <div className="poster-container">
+
           <div className="movie-wrapper">
-       
+
+          
           <img
-          className="poster-image"
-           src={`https://image.tmdb.org/t/p/w200${movieData.poster_path}`}
-           alt={`Backdrop for ${movieData.original_title}`}
-          ></img>
+  className="poster-image"
+  src={movieData.poster_path ? `https://image.tmdb.org/t/p/w200${movieData.poster_path}` : MoviePosterNone}
+  alt={`Backdrop for ${movieData.original_title}`}
+/>
+
               <FavoriteList movie = {movieData}></FavoriteList>
 </div>
         </div>
-      
+
+       
       
      
            
