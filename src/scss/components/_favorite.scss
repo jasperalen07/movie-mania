@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.favorite-page-flex{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width:600px) {
+    .favorite-page-flex{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 2rem;
+        
+    }
+    
+}

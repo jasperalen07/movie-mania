@@ -8,10 +8,12 @@ import SearchResults from "./pages/SearchResults";
 
 
 import './scss/styles.scss'
+import { GlobalProvider } from "./context/GlobalContext";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <GlobalProvider>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/pages/AboutPage" element= {<AboutPage/>}></Route>
@@ -20,6 +22,7 @@ function App() {
         <Route path="/searchResults" element={<SearchResults />} />
 
       </Routes>
+      </GlobalProvider>
       </BrowserRouter>
     </div>
   );
