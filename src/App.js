@@ -12,7 +12,7 @@ import { GlobalProvider } from "./context/GlobalContext";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="movie-squirrel">
       <GlobalProvider>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
