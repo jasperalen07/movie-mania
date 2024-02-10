@@ -1,35 +1,146 @@
+@use 'variables' as *;
+
 /* FeaturedCarousel.scss */
 .featured-movie {
-    position: relative;
-  
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.7); /* Adjust the background color and opacity as needed */
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    /* Adjust the background color and opacity as needed */
+    color: white;
+
+    h3 {
+      margin-bottom: 10px;
       color: white;
-  
-      h3 {
-        margin-bottom: 10px;
-        color: white;
-      }
-  
-      p {
-        margin-bottom: 0;
-      }
     }
 
+    p {
+      margin-bottom: 0;
+    }
   }
-  
+
+}
+
+.slick-next {
+  right: 0%;
+  z-index: 999;
+
+}
+
+.slick-prev {
+  left: 0%;
+  z-index: 999;
+
+}
+
+.slick-slide img {
+  width: 100%;
+  position: relative;
+
+}
+
+.black-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.082) 50%, rgba(51, 51, 51, 0.233));
+}
+
+.carousel-flex-container {
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+
+}
+
+.banner-movie-description {
+  position: relative;
+  bottom: 35px;
+  font-size: 0.5rem;
+}
+
+.banner-movie-title {
+  position: absolute;
+  z-index: 999;
+  bottom: -10%;
+  margin-left: 5%;
+  color: $movieTitleColors;
+  font-size: 1rem;
+}
+
+@media screen and (min-width:500px) {
+  .banner-movie-title {
+    bottom: 10%;
+
+  }
+
+  .banner-movie-description {
+    display: block;
+    z-index: 999;
+    position: absolute;
+    bottom: 0%;
+    max-width: 30rem;
+    max-height: 2rem;
+    margin-left: 5%;
+    color: $movieDescriptionColors;
+  }
+
+  .banner-movie-description {
+    font-size: 0.7rem;
+  }
+
+}
+
+@media screen and (min-width:900px) {
+  .banner-movie-title {
+    bottom: 20%;
+    font-size: 2rem;
+  }
+
+  .banner-movie-description {
+    font-size: 1.5rem;
+    bottom: 10%;
+
+  }
+
+}
+
+// .banner-movie-title{
+//   position: absolute;
+//   bottom: 15%;
+//   margin-left: 5%;
+//   z-index: 999;
+//   color:$movieTitleColors;
+// }
+// .banner-movie-description{
+//   position: absolute;
+//   bottom: 0;
+//   margin-left: 5%;
+//   z-index: 999;
+//   max-width: 30rem;
+//   max-height: fit-content;
+//   color:$movieDescriptionColors;
+
+
+
+
+
+// }

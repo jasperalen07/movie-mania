@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { searchMovie } from '../utilities/api'
 import { useLocation, useParams } from 'react-router'
 import MoviesContainer from '../components/MoviesContainer';
+import Header from '../components/Header';
 // import { URLSearchParams } from 'url';
 
 export default function SearchResults() {
@@ -26,9 +27,14 @@ useEffect(() => {
 // console.log(query)
 
 
+
   return (
+    <main>
+      <Header></Header>
     <div>
       <MoviesContainer title="" moviesData={searchMovieResults}/>
     </div>
+
+    </main>
   )
 }

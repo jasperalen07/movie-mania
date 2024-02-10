@@ -11,12 +11,19 @@ function truncate (input) {
         const dateObject = new Date (date);
         const options = {
             year: "numeric",
-            month: "long",
+            month: "short",
             day: "numeric"
         };
         return dateObject.toLocaleDateString("en-US", options);
     }
 
+    function formatRunTime(runtime){
+        if (runtime < 60) {
+            return runtime + "m";
+          } else {
+            return Math.floor(runtime / 60) + "h " + (runtime % 60) + "m";
+          }
+    }
 
     function filterVideos (videoDataArray){
         return videoDataArray.filter((videoData) => {
@@ -26,5 +33,5 @@ function truncate (input) {
 
   
 
-export { formatReleaseDate, truncate, getYear, filterVideos };
+export { formatReleaseDate, truncate, getYear, filterVideos, formatRunTime };
  

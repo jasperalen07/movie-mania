@@ -7,8 +7,50 @@
 @use "./components/navMiddle";
 @use "./components/variables" as *;
 @use "./pages/singleMoviePage";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 
 body{
     background-color: $backgroundColor;
+    font-size: 1.25rem;
+    font-family: 'Inter', sans-serif;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: #787878;
+}
+
+.about-section{
+    padding: 2rem;
+    max-width: 900px;
+    align-self: center;
+}
+
+.about-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.instagram {
+    padding: 0.5rem;
+}
+
+.facebook {
+    padding: 0.5rem;
+}
+
+.linkedin {
+    padding: 0.5rem;
+}
+@media screen and (min-width:1280px)  {
+
+    body{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

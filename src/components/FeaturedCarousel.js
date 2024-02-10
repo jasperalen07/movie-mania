@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { getPopularMovies } from '../utilities/api.js';
-import { useNavigate, Link } from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -15,16 +14,15 @@ const truncateOverview = (overview, maxLength) => {
 
 const FeaturedCarousel = () => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
+  const navigate = useNavigate();
   const CustomPrevArrow = (props) => (
-    <div {...props} className="slick-arrow slick-prev">
-      {/* Customize the previous arrow (e.g., use an icon) */}
+    <div {...props} className="slick-arrow slick-prev slick-button-customize">
       <span>&lt;</span>
     </div>
   );
 
   const CustomNextArrow = (props) => (
     <div {...props} className="slick-arrow slick-next">
-      {/* Customize the next arrow (e.g., use an icon) */}
       <span>&gt;</span>
     </div>
   );
@@ -46,8 +44,7 @@ const FeaturedCarousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    prevArrow: <CustomPrevArrow />, // Customize the previous arrow component
-    nextArrow: <CustomNextArrow />,
+
   };
 
   const navigate = useNavigate();
@@ -57,12 +54,7 @@ const FeaturedCarousel = () => {
     <Slider {...settings}>
       {featuredMovies.map(movie => (
         <div key={movie.id}>
-                      <div onClick={() => {
-                navigate(`/movie/${movie.id}`);
-              }} >
-                <Link>{movie.original_title}</Link>
           <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
-                </div>
           <h3>{movie.title}</h3>
           <p>{truncateOverview(movie.overview, 100)}</p>
           {/* Add additional movie information or styling as needed */}
