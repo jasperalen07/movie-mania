@@ -8,7 +8,6 @@
     width: 100%;
     height: auto;
     display: block;
-    z-index: 0;
   }
 
   .overlay {
@@ -59,7 +58,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 999;
   width: 100%;
   height: 30%;
   background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.082) 50%, rgba(51, 51, 51, 0.233));
@@ -74,7 +72,8 @@
 }
 
 .banner-movie-description {
-
+  position: relative;
+  bottom: 35px;
   font-size: 0.5rem;
 }
 
