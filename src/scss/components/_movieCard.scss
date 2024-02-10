@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 // The flex box container
-.movies-container{
+.movies-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,10 +9,11 @@
     text-align: center;
     align-items: center;
     flex-wrap: wrap;
-    
+
 }
+
 // individual items in flex box
-.movie-cards{
+.movie-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -29,38 +30,41 @@
     border-top-color: #333;
     animation: spin 1s ease-in-out infinite;
     margin: 100px auto;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-
-
-.movie-container{
-    position: relative;   
-    
 }
-.movie-container img{
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.movie-container {
+    position: relative;
+
+}
+
+.movie-container img {
     width: fit-content;
     cursor: pointer;
     border-radius: 15px;
 }
 
-.movie-wrapper{
+.movie-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top:2rem ;
+    margin-top: 2rem;
 }
-.details{
+
+.details {
     position: absolute;
     top: 10px;
     left: 0;
@@ -74,13 +78,14 @@
     color: white;
     padding-left: 10%;
     padding-right: 10%;
-    padding-top:10%;
-    
-    
+    padding-top: 10%;
+
+
 }
+
 .details-button {
     color: white;
-    background-color: black;  
+    background-color: black;
     position: absolute;
     left: 50%;
     bottom: 10px;
@@ -92,7 +97,7 @@
     border-radius: 15px;
 }
 
-.rating{
+.rating {
     position: absolute;
     top: 0;
     left: 5%;
@@ -101,7 +106,7 @@
 }
 
 
-.favorite-button{
+.favorite-button {
     font-size: 2rem;
     color: white;
     border: none;
@@ -110,10 +115,11 @@
     position: absolute;
     top: 0;
     right: 5%;
-    
-    
+
+
 }
-.favorite-button-active{
+
+.favorite-button-active {
     color: gold;
     font-size: 2rem;
     border: none;
@@ -123,36 +129,44 @@
     top: 0;
     right: 5%;
 }
-.subHeading{
+
+.subHeading {
     text-align: center;
     color: $navFontColors;
 }
-@media screen and (max-width:823px) and (min-width:616px){
-    .movie-cards{
+
+@media screen and (max-width:823px) and (min-width:616px) {
+    .movie-cards {
         justify-content: flex-start;
     }
-    .movie-card-flex-wrapper{
+
+    .movie-card-flex-wrapper {
         flex: 1;
     }
-        .movie-cards::after {
-        content: "";
-        flex: auto;
-    }
-    .favorite-button{
-        right: 15%;
-    }
-    .favorite-button-active{
-        right: 15%;
-    }
-}
-@media screen and (min-width:1550px) {
-    .movie-cards{
-        justify-content: space-evenly;
-        
-    }
+
     .movie-cards::after {
         content: "";
         flex: auto;
     }
-    
+
+    .favorite-button {
+        right: 15%;
+    }
+
+    .favorite-button-active {
+        right: 15%;
+    }
+}
+
+@media screen and (min-width:1550px) {
+    .movie-cards {
+        justify-content: space-evenly;
+
+    }
+
+    .movie-cards::after {
+        content: "";
+        flex: auto;
+    }
+
 }
