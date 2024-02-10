@@ -8,7 +8,6 @@
     width: 100%;
     height: auto;
     display: block;
-    z-index: 0;
   }
 
   .overlay {
@@ -59,7 +58,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 999;
   width: 100%;
   height: 30%;
   background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 0.082) 50%, rgba(51, 51, 51, 0.233));
@@ -120,6 +118,25 @@
     font-size: 1.5rem;
     bottom: 10%;
 
+  }
+
+}
+
+@media screen and (max-width:500px) {
+  .banner-movie-description {
+    position: relative;
+    bottom: 80px;
+    margin-left: 2%;
+    font-size: 0.5rem;
+  }
+
+  .banner-movie-title {
+    position: relative;
+    bottom: 75px;
+    z-index: 999;
+    margin-left: 2%;
+    color: $movieTitleColors;
+    font-size: 1rem;
   }
 
 }

@@ -1,39 +1,51 @@
 @use "variables" as *;
+
 // movies catogery flex box
-.nav-middle{
+.nav-middle {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: $headerBackgroundColor;
     flex-wrap: wrap;
 
-    button:hover{
+    button:hover {
         background-color: black;
         color: $movieDescriptionColors;
         border-radius: 10px;
     }
-   
-    
-    
-    button{
+
+
+
+    button {
         background: none;
         border: none;
         font-size: 1.2rem;
-        flex: 1 1 calc(25% - 50%); 
-        margin: 5px; 
-        box-sizing: border-box; 
+        flex: 1 1 calc(25% - 50%);
+        margin: 5px;
+        box-sizing: border-box;
         cursor: pointer;
-        
+
     }
+
     button:active {
-        background-color:#C4C4C4; 
-        transform: translateY(2px); 
-      }
+        background-color: #C4C4C4;
+        transform: translateY(2px);
+    }
 
 }
+
 // make flex box only show two per row.
-@media (max-width:450px){
-    button{
+@media (max-width:450px) {
+    button {
         flex: 1 1 calc(50% - 10px);
     }
+}
+
+@media (max-width:500px) {
+    .nav-middle {
+        position: relative;
+        bottom: 80px;
+    }
+
+
 }
