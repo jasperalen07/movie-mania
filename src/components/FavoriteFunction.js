@@ -1,42 +1,71 @@
 import { useState } from "react";
 import MovieCard from "./MovieCard";
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import {GlobalContext} from  "../context/GlobalContext";
+import ImageComponent from "./ImageFunction";
 
-const FavoriteList = ({ movie }) => {
-  const [favorites, setFavorites] = useState([]);
+function FavoriteList({ movie }) {
+  const { favorites, addToFavorites, removeFromFavorites} = 
+    useContext(GlobalContext);
 
+    const isFavorited = favorites.find((fav) => {
+      return fav.id === movie.id;
+    });
 
-  const addFavorite = () => {
+    function handleFavorite(event) {
+      event.stopPropagation();
+      if(isFavorited) {
+        removeFromFavorites(movie);
 
-    const hasFavorted = favorites.some((item) => item.id === movie.id);
-    if(!hasFavorted){
-    const newFavorite = {
-      id: movie.id,
-      title: movie.original_title,
-      
-    };
+      }else{
+        addToFavorites(movie);
+      }
+    }
 
-
-    setFavorites([...favorites, newFavorite]);
-    console.log(newFavorite);
-} else{
-    const updatedFavorites = favorites.filter((item) => item.id !== movie.id);
-    
-    setFavorites(updatedFavorites);
-    console.log(`movie id deleted${movie.id}`);
+    return (
+      <>
+       <button onClick={handleFavorite} className={`${isFavorited ? "favorite-button-active":"favorite-button"  }`}>&#9733;</button>
+      </>
+    )
 }
-  };
-
-  return (
-    <div>
-      <button onClick={addFavorite}>Add Favorite</button>
-     
-      <ul>
-        {favorites.map((favorite) => (
-          <li key={favorite.id}>{favorite.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
 
 export default FavoriteList;
+
+// const FavoriteList = ({ movie }) => {
+//   const [favorites, setFavorites] = useState([]);
+//   const [favoriteButton,setFavoriteButton] = useState(false);
+//   const navigate = useNavigate();
+
+
+//   const addFavorite = () => {
+//     setFavoriteButton(!favoriteButton);
+//     const hasFavorited = favorites.some((item) => item.id === movie.id);
+
+//     if (!hasFavorited) {
+//       const newFavorites = [...favorites, movie];
+//       setFavorites(newFavorites);
+//       localStorage.setItem('favorites', JSON.stringify(newFavorites));
+//     } else {
+//       const updatedFavorites = favorites.filter((item) => item.id !== movie.id);
+//       setFavorites(updatedFavorites);
+//       localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+//     }
+//   };
+
+
+//     <div>
+//       <button onClick={addFavorite} className={`${favoriteButton ? "favorite-button-active":"favorite-button"  }`}>&#9733;</button>
+     
+//       {/* <ul>
+//         {favorites.map((favorite) => (
+//           <li key={favorite.id}>{favorite.title}{favorite.moviePortrait}</li>
+          
+//         ))}
+        
+//       </ul> */}
+//     </div>
+//   );
+// };
+
+

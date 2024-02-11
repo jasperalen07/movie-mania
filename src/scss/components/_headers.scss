@@ -1,18 +1,172 @@
-.navbar{
-    ul{
-        padding:0;
-        list-style-type:none;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        
+@use '_variables' as *;
+
+
+nav {
+    position: relative;
+    background-color: $headerBackgroundColor;
+    padding: 10px;
+
+}
+
+.navbar {
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 5rem;
+
+    .favicon {
+        transform: translate(10%, -20%)
+    }
+
+    .desktop-nav {
+        display: none;
+
     }
 
 
+
 }
-.show{
+
+.navTags {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    background-color: rgba(0, 0, 0, 0.521);
+    color: white;
+    z-index: 999;
+    transform: translateY(-15%);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-evenly;
+    display: none;
+    list-style-type: none;
+
+    a {
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: white;
+    }
+
+
+    &.open {
+        display: block; // Show the menu when the open class is applied
+        animation: slideIn 0.3s forwards; // Apply animation when opening
+
+    }
+
+    &.closed {
+        animation: slideOut 0.3s backwards; // Apply animation when closing
+    }
+
+}
+
+.navTags ul {
+    list-style-type: none;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.search-listing {
+    transform: translateY(20%);
+}
+
+// hamburger
+.menu {
+    font-size: 3rem;
+    color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 999;
+    display: inline-block;
+}
+
+.show {
     display: block;
 }
-.hide{
+
+.hide {
     display: none;
+}
+
+// adjust favicon 
+@media screen and (max-width:1000px) and (min-width:780px) {
+    .navbar {
+        .favicon {
+            width: 7rem;
+            transform: translate(-5%, -20%);
+
+        }
+
+        .menu {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width:780px) {
+    .navbar {
+        .favicon {
+            width: 6rem;
+
+
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .navbar {
+        .favicon {
+            transform: translate(-8%, -20%);
+
+
+        }
+    }
+}
+
+// displaying nav
+@media screen and (min-width:1000px) {
+    .navbar {
+        .desktop-nav {
+            display: block;
+            align-self: center;
+            color: $navFontColors;
+            font-size: 1.75rem;
+        }
+
+        .navTags {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:visited {
+
+            color: $navFontColors;
+        }
+    }
+
+    .menu {
+        display: none;
+    }
 }
