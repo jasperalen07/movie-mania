@@ -7,6 +7,7 @@ export function GlobalProvider({ children }) {
     const localData = localStorage.getItem("favorites");
     return localData ? JSON.parse(localData) : [];
   }
+
   const [favorites, setFavorites] = useState(loadFromLocalStorage());
 
   function addToFavorites(favorite) {
@@ -38,4 +39,4 @@ export function GlobalProvider({ children }) {
   );
 }
 
-export default GlobalContext;
+
