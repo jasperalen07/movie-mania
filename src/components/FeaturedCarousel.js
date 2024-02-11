@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+import { useNavigate } from "react-router-dom";
 import { getPopularMovies } from '../utilities/api.js';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -47,7 +48,7 @@ const FeaturedCarousel = () => {
 
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   console.log(featuredMovies);
 
   return (
