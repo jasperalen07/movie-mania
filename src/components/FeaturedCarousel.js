@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { getPopularMovies } from '../utilities/api.js';
-import { useNavigate } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -48,19 +47,17 @@ const FeaturedCarousel = () => {
 
   };
 
-
+  const navigate = useNavigate();
   console.log(featuredMovies);
 
   return (
     <Slider {...settings}>
       {featuredMovies.map(movie => (
-        <div className='carousel-flex-container' key={movie.id} onClick={() => {
-          navigate(`/movie/${movie.id}`);
-        }}>
-          <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} />
-          <div className="black-border"></div>
-          <h3 className='banner-movie-title'>{movie.title}</h3>
-          <p className='banner-movie-description'>{truncateOverview(movie.overview, 100)}</p>
+        <div key={movie.id}>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.title} />
+          <h3>{movie.title}</h3>
+          <p>{truncateOverview(movie.overview, 100)}</p>
+          {/* Add additional movie information or styling as needed */}
         </div>
       ))}
     </Slider>
