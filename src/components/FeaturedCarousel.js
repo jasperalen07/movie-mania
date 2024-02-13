@@ -5,7 +5,6 @@ import { getPopularMovies } from '../utilities/api.js';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-
 const truncateOverview = (overview, maxLength) => {
   if (overview.length <= maxLength) {
     return overview;
@@ -45,12 +44,10 @@ const FeaturedCarousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-
   };
 
   // const navigate = useNavigate();
   console.log(featuredMovies);
-
   return (
     <Slider {...settings}>
       {featuredMovies.map(movie => (
